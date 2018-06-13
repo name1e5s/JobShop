@@ -2,7 +2,7 @@
 
 This project is a final project of "Course Exercise of Introduction to Computation" in BUPT.
 
-During the whole time of this project, our excellent teachers changed the requirment of this project again and again, which gave us a REAL experience. The experience of develop a application under a fucking mess development.
+During the whole time of this project, our excellent teachers changed the requirment of this project again and again, which gave us a REAL experience. The experience of develop a application under a fucking mess management.
 
 ### Introduction
 
