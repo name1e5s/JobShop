@@ -12,7 +12,6 @@
 #include <ganttchartoperation.h>
 #include <cstdlib>
 #include <ctime>
-#include <QDebug>
 #include <QTextStream>
 extern int best_makespan;
 
@@ -26,7 +25,6 @@ JobShop::JobShop() {
 
 void JobShop::setJobSize(int i) {
     *m_job_size = i;
-    qDebug() << *m_job_size;
 }
 
 void JobShop::setMachineSize(int i) {
@@ -45,13 +43,10 @@ void JobShop::getProb(QString str) {
             job[i].step[machine] = j;
         }
     }
-    qDebug() << "Done...";
 }
 
 void JobShop::runProb() {
     run_bottle_neck();
-    qDebug() << machine_size << job_size;
-    qDebug() << best_makespan;
 }
 
 GanttChartBase* JobShop::generateGantt() {
@@ -68,7 +63,6 @@ GanttChartBase* JobShop::generateGantt() {
         h = fmod(h,1.0);
         Palette.append(QColor::fromHslF(h,0.75,0.6));
     }
-    qDebug() << "Done...";
     for(int i=0; i<machine_size; i++)
     {
         m = new GanttChartMachine(QString("%1").arg(i), m_chart);
@@ -76,7 +70,6 @@ GanttChartBase* JobShop::generateGantt() {
         m->setPos(0, i * GanttChartBase::machineHeight);
         m->setMakespan(best_makespan);
     }
-    qDebug() << "Done...";
     for(int i = 0; i < job_size; i ++) {
         for(int j = 0; j < machine_size; j ++) {
             int currmachine = job[i].order[j];
@@ -88,7 +81,6 @@ GanttChartBase* JobShop::generateGantt() {
         }
     }
     for(Fixer *f : fixer) {
-        qDebug() << f->duration << " " << f->machine << f->starttime;
         GanttChartOperation *gop =new GanttChartOperation("Fix Me",
                                   f->duration,QColor("white"));
         gop->setParentItem(machines[f->machine]);

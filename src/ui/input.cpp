@@ -9,7 +9,6 @@
 #include "ui_input.h"
 #include <jobshop.h>
 #include <result.h>
-#include <QDebug>
 
 Input::Input(QWidget *parent) :
     QMainWindow(parent),
