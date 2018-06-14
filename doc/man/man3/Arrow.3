@@ -1,0 +1,170 @@
+.TH "Arrow" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Arrow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <arrow\&.h>\fP
+.PP
+Inherits QGraphicsLineItem\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBType\fP = UserType + 1 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBtype\fP () const"
+.br
+.ti -1c
+.RI "\fBArrow\fP (QGraphicsItem *parent=0)"
+.br
+.RI "Creat an arrow\&. "
+.ti -1c
+.RI "\fBArrow\fP (const QPointF &\fBstartPoint\fP, const QPointF &\fBendPoint\fP, QGraphicsItem *parent=0)"
+.br
+.RI "Creat an arrow : The harder version\&. "
+.ti -1c
+.RI "virtual QRectF \fBboundingRect\fP () const"
+.br
+.ti -1c
+.RI "virtual QPainterPath \fBshape\fP () const"
+.br
+.ti -1c
+.RI "QPointF \fBstartPoint\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStartPoint\fP (const QPointF &\fBstartPoint\fP)"
+.br
+.ti -1c
+.RI "QPointF \fBendPoint\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEndPoint\fP (const QPointF &\fBendPoint\fP)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBpaint\fP (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QPointF \fBprivate_startPoint\fP"
+.br
+.ti -1c
+.RI "QPointF \fBprivate_endPoint\fP"
+.br
+.ti -1c
+.RI "QPolygonF \fBprivate_arrowHead\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 22 of file arrow\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "anonymous enum"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIType \fP\fP
+.PP
+Definition at line 25 of file arrow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Arrow::Arrow (QGraphicsItem * parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Creat an arrow\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP 
+.RE
+.PP
+
+.PP
+Definition at line 21 of file arrow\&.cpp\&.
+.SS "Arrow::Arrow (const QPointF & startPoint, const QPointF & endPoint, QGraphicsItem * parent = \fC0\fP)"
+
+.PP
+Creat an arrow : The harder version\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstartPoint\fP 
+.br
+\fIendPoint\fP 
+.br
+\fIparent\fP 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file arrow\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QRectF Arrow::boundingRect () const\fC [virtual]\fP"
+
+.PP
+Definition at line 42 of file arrow\&.cpp\&.
+.SS "QPointF Arrow::endPoint () const"
+
+.PP
+Definition at line 87 of file arrow\&.cpp\&.
+.SS "void Arrow::paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = \fC0\fP)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 57 of file arrow\&.cpp\&.
+.SS "void Arrow::setEndPoint (const QPointF & endPoint)"
+
+.PP
+Definition at line 91 of file arrow\&.cpp\&.
+.SS "void Arrow::setStartPoint (const QPointF & startPoint)"
+
+.PP
+Definition at line 99 of file arrow\&.cpp\&.
+.SS "QPainterPath Arrow::shape () const\fC [virtual]\fP"
+
+.PP
+Definition at line 51 of file arrow\&.cpp\&.
+.SS "QPointF Arrow::startPoint () const"
+
+.PP
+Definition at line 95 of file arrow\&.cpp\&.
+.SS "virtual int Arrow::type () const\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 26 of file arrow\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QPolygonF Arrow::private_arrowHead\fC [private]\fP"
+
+.PP
+Definition at line 48 of file arrow\&.h\&.
+.SS "QPointF Arrow::private_endPoint\fC [private]\fP"
+
+.PP
+Definition at line 47 of file arrow\&.h\&.
+.SS "QPointF Arrow::private_startPoint\fC [private]\fP"
+
+.PP
+Definition at line 46 of file arrow\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

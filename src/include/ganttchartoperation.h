@@ -17,9 +17,6 @@ class GanttChartOperation : public QGraphicsRectItem
 
 public:
     GanttChartOperation(const QString& id, int time,QColor color);
-    ~GanttChartOperation();
-
-    void setTime(int time);
 
 protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);

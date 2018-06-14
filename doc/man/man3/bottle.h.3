@@ -1,0 +1,167 @@
+.TH "include/bottle.h" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/bottle.h \- Header file for the whole project\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBJOB\fP"
+.br
+.ti -1c
+.RI "struct \fBSEQUENCE\fP"
+.br
+.ti -1c
+.RI "struct \fBONEMACHINestime\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAXJOB\fP   30"
+.br
+.ti -1c
+.RI "#define \fBMAXMACHINE\fP   30"
+.br
+.ti -1c
+.RI "#define \fBINFINITAS\fP   0x7fffffff"
+.br
+.ti -1c
+.RI "#define \fBMAX\fP(a,  b)   ((a) > (b) ? (a) : (b))"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBJOB\fP \fBjob_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBSEQUENCE\fP \fBsequence_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBONEMACHINestime\fP \fBonemach_times_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBprestissimo\fP (void)"
+.br
+.ti -1c
+.RI "void \fBrun_bottle_neck\fP (void)"
+.br
+.ti -1c
+.RI "int \fBone_machine\fP (\fBonemach_times_t\fP one, int *bestorder)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBjob_t\fP \fBjob\fP [\fBMAXJOB\fP]"
+.br
+.ti -1c
+.RI "int \fBjob_size\fP"
+.br
+.ti -1c
+.RI "int \fBmachine_size\fP"
+.br
+.ti -1c
+.RI "int \fBterminate_flag\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Header file for the whole project\&. 
+
+A Simple Old-fashion Implementation Of The Well-known Shifting Bottleneck Procedure For Job Shop Scheduling Problem(JSSP)\&.The codes are based on 'The Shifting Bottleneck Procedure for Job Shop Scheduling' by J\&. Adams et al\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Name1e5s 
+.RE
+.PP
+
+.PP
+Definition in file \fBbottle\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define INFINITAS   0x7fffffff"
+A integer that can be seen as infinity -- should be bigger than the biggest makespan of all the instances\&. Hence, 0x7fffffff (a\&.k\&.a INT_MAX) is a good choice 
+.PP
+Definition at line 33 of file bottle\&.h\&.
+.SS "#define MAX(a, b)   ((a) > (b) ? (a) : (b))"
+A regular macro that returns the bigger value bewteen a and b\&. 
+.PP
+Definition at line 38 of file bottle\&.h\&.
+.SS "#define MAXJOB   30"
+The most jobs this program can handle\&. 
+.PP
+Definition at line 21 of file bottle\&.h\&.
+.SS "#define MAXMACHINE   30"
+The most machines this program can handle\&. 
+.PP
+Definition at line 26 of file bottle\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBJOB\fP  \fBjob_t\fP"
+Data representation for a job\&. 
+.SS "typedef struct \fBONEMACHINestime\fP  \fBonemach_times_t\fP"
+Store the time info for every job runs on the same machine\&. 
+.SS "typedef struct \fBSEQUENCE\fP  \fBsequence_t\fP"
+Job sequences on a machine\&. 
+.SH "Function Documentation"
+.PP 
+.SS "int one_machine (\fBonemach_times_t\fP one, int * bestorder)"
+The one-machine sequencing algorithm from 'The one-machine sequencing problem' by Jacques Carlier\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIone\fP Representation of the machine\&. 
+.br
+\fIbestorder\fP Best job order 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+makespan 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file onemachine\&.cpp\&.
+.SS "void prestissimo (void)"
+
+.SS "void run_bottle_neck (void)"
+Driver of the Shifting Bottleneck Procedure We can change here to have a balance bewteen run time and makespan\&.\&.\&.
+.PP
+Definition at line 65 of file bottle\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBjob_t\fP job[\fBMAXJOB\fP]"
+Data representation of all the jobs\&. All operations runs on this varible\&. 
+.PP
+Definition at line 5 of file common_definition\&.cpp\&.
+.SS "int job_size"
+Job number in this instance\&. 
+.PP
+Definition at line 10 of file common_definition\&.cpp\&.
+.SS "int machine_size"
+Machine number in this instance\&. 
+.PP
+Definition at line 15 of file common_definition\&.cpp\&.
+.SS "int terminate_flag"
+Should we stop??? 
+.PP
+Definition at line 20 of file common_definition\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

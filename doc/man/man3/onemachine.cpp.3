@@ -1,0 +1,158 @@
+.TH "algorithm/onemachine.cpp" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+algorithm/onemachine.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <bottle\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBONEMACHINE_BRANCH_AND_BOUND_ASSISTANT\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBONEMACH_BBNODES\fP   300"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBONEMACHINE_BRANCH_AND_BOUND_ASSISTANT\fP \fBonemach_bb_ass_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBcp_onemach_time\fP (\fBonemach_times_t\fP *mew, \fBonemach_times_t\fP *origin)"
+.br
+.ti -1c
+.RI "static void \fBmwr_schedule\fP (\fBonemach_times_t\fP one, int *order)"
+.br
+.ti -1c
+.RI "static int \fBlower_bound\fP (\fBonemach_times_t\fP one, int *jset, int jset_size)"
+.br
+.ti -1c
+.RI "static int \fBmake_span\fP (\fBonemach_times_t\fP one, int *order, int *jset, int *jset_size, int *cjob, int *pjob, int *make)"
+.br
+.ti -1c
+.RI "static int \fBmake_value\fP (\fBonemach_times_t\fP one, int *order)"
+.br
+.ti -1c
+.RI "int \fBone_machine\fP (\fBonemach_times_t\fP one, int *bestorder)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ONEMACH_BBNODES   300"
+Nodes number of the branch and bound tree to solve the one machine sequencing problem\&. 
+.PP
+Definition at line 17 of file onemachine\&.cpp\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBONEMACHINE_BRANCH_AND_BOUND_ASSISTANT\fP  \fBonemach_bb_ass_t\fP"
+Info of node of a branch and bound tree\&. 
+.SH "Function Documentation"
+.PP 
+.SS "static void cp_onemach_time (\fBonemach_times_t\fP * mew, \fBonemach_times_t\fP * origin)\fC [inline]\fP, \fC [static]\fP"
+Copy origin onemach_times struct to mew By practice, change from memcpy to just write what we want to do is very important\&.\&.\&. 
+.PP
+Definition at line 159 of file onemachine\&.cpp\&.
+.SS "static int lower_bound (\fBonemach_times_t\fP one, int * job_set, int job_set_size)\fC [inline]\fP, \fC [static]\fP"
+Find the lower bound of the given machine on the given job order\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIone\fP The representation of the given machine\&. 
+.br
+\fIjob_set\fP The set of job\&. 
+.br
+\fIjob_set_size\fP The size of job_set 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Lowerbound of the machine\&. Which is just the sum of minimum estime and minimum mhtime and the sum of all the process time\&. 
+.RE
+.PP
+
+.PP
+Definition at line 245 of file onemachine\&.cpp\&.
+.SS "static int make_span (\fBonemach_times_t\fP one, int * order, int * job_set, int * job_set_size, int * critical_job_order, int * terminate_job_order, int * make)\fC [inline]\fP, \fC [static]\fP"
+Test if the job order is feasible and compute the make_span\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIone\fP The representation of the given machine\&. 
+.br
+\fIorder\fP The given job order\&. 
+.br
+\fIjob_set\fP The set of job on the machine\&. 
+.br
+\fIjob_set_size\fP The size of job_set\&. 
+.br
+\fIcritical_job_order\fP 
+.br
+\fIterminate_job_order\fP 
+.br
+\fImake\fP The make_span\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If the order is OK return 1,else return 0\&. 
+.RE
+.PP
+
+.PP
+Definition at line 277 of file onemachine\&.cpp\&.
+.SS "static int make_value (\fBonemach_times_t\fP one, int * order)\fC [inline]\fP, \fC [static]\fP"
+Compute the makespan of the given job order\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIone\fP Representation of the machine\&.  order The given job order\&. 
+.RE
+.PP
+
+.PP
+Definition at line 222 of file onemachine\&.cpp\&.
+.SS "static void mwr_schedule (\fBonemach_times_t\fP one, int * order)\fC [inline]\fP, \fC [static]\fP"
+Algorithm to find the most work remaining schedule by Schrage 
+.PP
+Definition at line 170 of file onemachine\&.cpp\&.
+.SS "int one_machine (\fBonemach_times_t\fP one, int * bestorder)"
+The one-machine sequencing algorithm from 'The one-machine sequencing problem' by Jacques Carlier\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIone\fP Representation of the machine\&. 
+.br
+\fIbestorder\fP Best job order 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+makespan 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file onemachine\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

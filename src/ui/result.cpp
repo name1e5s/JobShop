@@ -14,35 +14,61 @@
 #include <cstdlib>
 extern int best_makespan;
 
+/**
+ * @brief The pair struct for sorting machines.
+ */
+struct pair
+{
+    int starttime;
+    int endtime;
+};
+
+/**
+ * @brief Function to compare starttime of two pairs for qsort.
+ * @param a The first pair.
+ * @param b The second pair.
+ * @return If start time of a is lesser than b, then return a positive
+ * value, else return a non-positive value.
+ */
+int starttime_cmp(const void *a, const void *b) {
+    return ((pair *)a)->starttime - ((pair *)b)->starttime;
+}
+
+/**
+ * @brief Construct the result window.
+ * @param instance The instance class.
+ * @param parent ...
+ */
 Result::Result(JobShop *instance,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Result),
     jssp(instance)
 {
     ui->setupUi(this);
-    m_chart = instance->generateGantt();
-    m_scene = new QGraphicsScene(this);
-    m_scene->addItem(m_chart);
+    private_chart = instance->generateGantt();
+    private_scene = new QGraphicsScene(this);
+    private_scene->addItem(private_chart);
 
-    ui->resuleGanttChart->setScene(m_scene);
+    ui->resuleGanttChart->setScene(private_scene);
     ui->resuleGanttChart->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     connect(ui->fixButton,&QPushButton::toggled,this,&Result::on_fixButton_clicked);
 }
 
+/**
+ * @brief Delete the window.
+ */
 Result::~Result()
 {
     delete ui;
-    delete m_chart;
+    delete private_chart;
 }
 
-struct pair
-{
-    int starttime;
-    int endtime;
-};
-int cmp(const void *a, const void *b) {
-    return ((pair *)a)->starttime - ((pair *)b)->starttime;
-};
+/**
+ * @brief Handle the fix command
+ * @param machine
+ * @param clock
+ * @param duration
+ */
 void Result::Fix(int machine, int clock ,int duration) {
     pair pairs[30];
     int index = 0;
@@ -53,7 +79,7 @@ void Result::Fix(int machine, int clock ,int duration) {
                 pairs[i].starttime = job[i].start[machine];
                 pairs[i].endtime = job[i].start[machine] + job[i].process_time[machine];
     }
-    qsort(pairs,job_size,sizeof(pair),cmp);
+    qsort(pairs,job_size,sizeof(pair),starttime_cmp);
     index = 0;
     int i;
     for(i = 0; i < job_size; i++) {
@@ -104,6 +130,9 @@ void Result::Fix(int machine, int clock ,int duration) {
     best_makespan += real_duration;
 }
 
+/**
+ * @brief The action of fixButton.
+ */
 void Result::on_fixButton_clicked()
 {
     int clock = 0;
@@ -113,8 +142,8 @@ void Result::on_fixButton_clicked()
     QTextStream stream(&str);
     stream >> clock >> machine >> duration;
     this->Fix(machine,clock,duration);
-    m_scene->removeItem(m_chart);
-    m_chart = jssp->generateGantt();
-    m_scene->addItem(m_chart);
+    private_scene->removeItem(private_chart);
+    private_chart = jssp->generateGantt();
+    private_scene->addItem(private_chart);
     ui->resuleGanttChart->update();
 }

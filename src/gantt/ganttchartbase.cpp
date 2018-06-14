@@ -18,6 +18,10 @@
 #include <QStyleOptionGraphicsItem>
 #include <QGraphicsScene>
 
+/**
+ * @brief Construct a gantt chart.
+ * @param makespan The makespan of this project.
+ */
 GanttChartBase::GanttChartBase(int makespan) :
     QGraphicsItem(nullptr),
     makespan(makespan)
@@ -42,6 +46,12 @@ QRectF GanttChartBase::boundingRect() const
     return this->childrenBoundingRect();
 }
 
+/**
+ * @brief Paint this gantt chart.
+ * @param painter
+ * @param option
+ * @param widget
+ */
 void GanttChartBase::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(painter);

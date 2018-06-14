@@ -10,6 +10,10 @@
 #include <jobshop.h>
 #include <result.h>
 
+/**
+ * @brief Set the input window.
+ * @param parent
+ */
 Input::Input(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Input)
@@ -21,12 +25,18 @@ Input::Input(QWidget *parent) :
     connect(ui->start_button,&QPushButton::toggled,this,&Input::on_start_button_clicked);
 }
 
+/**
+ * @brief Delete the window.
+ */
 Input::~Input()
 {
     delete ui;
     delete jssp;
 }
 
+/**
+ * @brief Action of start button.
+ */
 void Input::on_start_button_clicked()
 {
     this->close();

@@ -1,0 +1,174 @@
+.TH "JobShop" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+JobShop
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <jobshop\&.h>\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJobShop\fP ()"
+.br
+.RI "Get pointers of previous defined varibles\&. "
+.ti -1c
+.RI "\fBjob_t\fP * \fBgetJob\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetJobSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetMachineSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetJobSize\fP (int i)"
+.br
+.RI "Set job size using the given value\&. "
+.ti -1c
+.RI "void \fBsetMachineSize\fP (int i)"
+.br
+.RI "Set machine size using the given value\&. "
+.ti -1c
+.RI "void \fBgetProb\fP (QString)"
+.br
+.RI "Read innstance file from the given str\&. "
+.ti -1c
+.RI "\fBGanttChartBase\fP * \fBgenerateGantt\fP ()"
+.br
+.RI "Generate the gantt chart from our result\&. "
+.ti -1c
+.RI "void \fBrunProb\fP ()"
+.br
+.RI "Run the awesome soler algorithm\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVector< \fBFixer\fP * > \fBfixer\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBjob_t\fP * \fBm_job\fP"
+.br
+.ti -1c
+.RI "int * \fBm_job_size\fP"
+.br
+.ti -1c
+.RI "int * \fBm_machine_size\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 26 of file jobshop\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "JobShop::JobShop ()"
+
+.PP
+Get pointers of previous defined varibles\&. 
+.PP
+Definition at line 21 of file jobshop\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBGanttChartBase\fP * JobShop::generateGantt ()"
+
+.PP
+Generate the gantt chart from our result\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The gantt chart\&. 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file jobshop\&.cpp\&.
+.SS "\fBjob_t\fP* JobShop::getJob ()\fC [inline]\fP"
+
+.PP
+Definition at line 31 of file jobshop\&.h\&.
+.SS "int JobShop::getJobSize ()\fC [inline]\fP"
+
+.PP
+Definition at line 32 of file jobshop\&.h\&.
+.SS "int JobShop::getMachineSize ()\fC [inline]\fP"
+
+.PP
+Definition at line 33 of file jobshop\&.h\&.
+.SS "void JobShop::getProb (QString str)"
+
+.PP
+Read innstance file from the given str\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP The given string grom the QPlainTextEdit 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file jobshop\&.cpp\&.
+.SS "void JobShop::runProb ()"
+
+.PP
+Run the awesome soler algorithm\&. 
+.PP
+Definition at line 66 of file jobshop\&.cpp\&.
+.SS "void JobShop::setJobSize (int i)"
+
+.PP
+Set job size using the given value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP Given value from the spin box 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file jobshop\&.cpp\&.
+.SS "void JobShop::setMachineSize (int i)"
+
+.PP
+Set machine size using the given value\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP Given value from the spin box 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file jobshop\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QVector<\fBFixer\fP*> JobShop::fixer"
+
+.PP
+Definition at line 39 of file jobshop\&.h\&.
+.SS "\fBjob_t\fP* JobShop::m_job\fC [private]\fP"
+
+.PP
+Definition at line 41 of file jobshop\&.h\&.
+.SS "int* JobShop::m_job_size\fC [private]\fP"
+
+.PP
+Definition at line 42 of file jobshop\&.h\&.
+.SS "int* JobShop::m_machine_size\fC [private]\fP"
+
+.PP
+Definition at line 43 of file jobshop\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

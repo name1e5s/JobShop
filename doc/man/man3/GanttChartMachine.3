@@ -1,0 +1,129 @@
+.TH "GanttChartMachine" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GanttChartMachine
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ganttchartmachine\&.h>\fP
+.PP
+Inherits QGraphicsItem\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGanttChartMachine\fP (const QString &id, QGraphicsItem *parent=0)"
+.br
+.RI "Construct a machine class\&. "
+.ti -1c
+.RI "\fB~GanttChartMachine\fP ()"
+.br
+.ti -1c
+.RI "virtual QRectF \fBboundingRect\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMakespan\fP (int cMax)"
+.br
+.RI "Set makespan of this machine\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBpaint\fP (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)"
+.br
+.RI "Paint this machine\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBmakespan\fP"
+.br
+.ti -1c
+.RI "QString \fBmachine_num\fP"
+.br
+.ti -1c
+.RI "\fBArrow\fP * \fBprivate_arrow\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file ganttchartmachine\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GanttChartMachine::GanttChartMachine (const QString & id, QGraphicsItem * parent = \fC0\fP)"
+
+.PP
+Construct a machine class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIid\fP The given machine id\&. 
+.br
+\fIparent\fP 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file ganttchartmachine\&.cpp\&.
+.SS "GanttChartMachine::~GanttChartMachine ()"
+
+.PP
+Definition at line 42 of file ganttchartmachine\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QRectF GanttChartMachine::boundingRect () const\fC [virtual]\fP"
+
+.PP
+Definition at line 46 of file ganttchartmachine\&.cpp\&.
+.SS "void GanttChartMachine::paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = \fC0\fP)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Paint this machine\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpainter\fP 
+.br
+\fIoption\fP 
+.br
+\fIwidget\fP 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file ganttchartmachine\&.cpp\&.
+.SS "void GanttChartMachine::setMakespan (int cMax)"
+
+.PP
+Set makespan of this machine\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcMax\fP The makespan value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file ganttchartmachine\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString GanttChartMachine::machine_num\fC [private]\fP"
+
+.PP
+Definition at line 32 of file ganttchartmachine\&.h\&.
+.SS "int GanttChartMachine::makespan\fC [private]\fP"
+
+.PP
+Definition at line 31 of file ganttchartmachine\&.h\&.
+.SS "\fBArrow\fP* GanttChartMachine::private_arrow\fC [private]\fP"
+
+.PP
+Definition at line 33 of file ganttchartmachine\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

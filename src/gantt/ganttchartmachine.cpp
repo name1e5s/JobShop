@@ -16,6 +16,11 @@
 #include <QPainter>
 #include <QFont>
 
+/**
+ * @brief Construct a machine class.
+ * @param id The given machine id.
+ * @param parent
+ */
 GanttChartMachine::GanttChartMachine(const QString &id, QGraphicsItem *parent) :
     QGraphicsItem(parent),
     machine_num(id),
@@ -44,6 +49,12 @@ QRectF GanttChartMachine::boundingRect() const
     return QRectF(0, 0, p.x(), p.y());
 }
 
+/**
+ * @brief Paint this machine.
+ * @param painter
+ * @param option
+ * @param widget
+ */
 void GanttChartMachine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(painter);
@@ -51,6 +62,10 @@ void GanttChartMachine::paint(QPainter *painter, const QStyleOptionGraphicsItem 
     Q_UNUSED(widget);
 }
 
+/**
+ * @brief Set makespan of this machine.
+ * @param cMax The makespan value.
+ */
 void GanttChartMachine::setMakespan(int cMax)
 {
     makespan = cMax;

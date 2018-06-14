@@ -1,0 +1,70 @@
+.TH "algorithm/eval.cpp" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+algorithm/eval.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <bottle\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBJOBMACHINEPAR\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBJOBMACHINEPAR\fP \fBjob_machine_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBeval\fP (\fBsequence_t\fP *seq)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBmagicnum\fP = 0"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBJOBMACHINEPAR\fP  \fBjob_machine_t\fP"
+Auxiliary struct to calcuate the makespan\&. 
+.SH "Function Documentation"
+.PP 
+.SS "int eval (\fBsequence_t\fP * seq)"
+Evaluate the makespan of the given sequence\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIseq\fP The sequence of job\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The makespan of the sequence\&. 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file eval\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "magicnum = 0"
+The number generated and managed by the God in the computer\&. Every one who changed the name of this feild will be seen as an evil and will be cursed by the God\&. 
+.PP
+Definition at line 23 of file eval\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

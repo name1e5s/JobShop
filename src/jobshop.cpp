@@ -15,6 +15,9 @@
 #include <QTextStream>
 extern int best_makespan;
 
+/**
+ * @brief Get pointers of previous defined varibles.
+ */
 JobShop::JobShop() {
     m_job_size = &job_size;
     m_machine_size = &machine_size;
@@ -23,14 +26,26 @@ JobShop::JobShop() {
     m_job = &job[0];
 }
 
+/**
+ * @brief Set job size using the given value
+ * @param i Given value from the spin box
+ */
 void JobShop::setJobSize(int i) {
     *m_job_size = i;
 }
 
+/**
+ * @brief Set machine size using the given value
+ * @param i Given value from the spin box
+ */
 void JobShop::setMachineSize(int i) {
     *m_machine_size = i;
 }
 
+/**
+ * @brief Read innstance file from the given str
+ * @param str The given string grom the QPlainTextEdit
+ */
 void JobShop::getProb(QString str) {
     QTextStream stream(&str);
     for(int i = 0; i < job_size; i ++) {
@@ -45,10 +60,17 @@ void JobShop::getProb(QString str) {
     }
 }
 
+/**
+ * @brief Run the awesome soler algorithm
+ */
 void JobShop::runProb() {
     run_bottle_neck();
 }
 
+/**
+ * @brief Generate the gantt chart from our result.
+ * @return The gantt chart.
+ */
 GanttChartBase* JobShop::generateGantt() {
     GanttChartBase *m_chart = new GanttChartBase(best_makespan);
 

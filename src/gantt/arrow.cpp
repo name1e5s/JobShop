@@ -1,10 +1,10 @@
 /**
  * @file arrow.cpp
- *
  * Draw arrow.
  *
  * @author Name1e5s
  */
+
 #include <arrow.h>
 
 #include <QtGui>
@@ -14,12 +14,22 @@
 const qreal Pi = M_PI;
 const qreal arrowSize = 10;
 
+/**
+ * @brief Creat an arrow.
+ * @param parent
+ */
 Arrow::Arrow(QGraphicsItem *parent) :
     QGraphicsLineItem(parent)
 {
     setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
 
+/**
+ * @brief Creat an arrow : The harder version.
+ * @param startPoint
+ * @param endPoint
+ * @param parent
+ */
 Arrow::Arrow(const QPointF &startPoint, const QPointF &endPoint, QGraphicsItem *parent) :
     QGraphicsLineItem(parent)
 {

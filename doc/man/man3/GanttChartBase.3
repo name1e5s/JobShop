@@ -1,0 +1,139 @@
+.TH "GanttChartBase" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GanttChartBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ganttchartbase\&.h>\fP
+.PP
+Inherits QGraphicsItem\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGanttChartBase\fP (int \fBmakespan\fP)"
+.br
+.RI "Construct a gantt chart\&. "
+.ti -1c
+.RI "virtual QRectF \fBboundingRect\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QPointF \fBoperationPosition\fP (int time)"
+.br
+.ti -1c
+.RI "static QPointF \fBmachineOffset\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBwidthUnit\fP = 10"
+.br
+.ti -1c
+.RI "static const int \fBoperationHeight\fP = 20"
+.br
+.ti -1c
+.RI "static const int \fBmachineHeight\fP = \fBoperationHeight\fP * 3"
+.br
+.ti -1c
+.RI "static const int \fBmachineHorizontalOffset\fP = 35"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBpaint\fP (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)"
+.br
+.RI "Paint this gantt chart\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBmakespan\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file ganttchartbase\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GanttChartBase::GanttChartBase (int makespan)"
+
+.PP
+Construct a gantt chart\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImakespan\fP The makespan of this project\&. 
+.RE
+.PP
+
+.PP
+Definition at line 25 of file ganttchartbase\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QRectF GanttChartBase::boundingRect () const\fC [virtual]\fP"
+
+.PP
+Definition at line 44 of file ganttchartbase\&.cpp\&.
+.SS "static QPointF GanttChartBase::machineOffset ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 25 of file ganttchartbase\&.h\&.
+.SS "static QPointF GanttChartBase::operationPosition (int time)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 22 of file ganttchartbase\&.h\&.
+.SS "void GanttChartBase::paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget = \fC0\fP)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Paint this gantt chart\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpainter\fP 
+.br
+\fIoption\fP 
+.br
+\fIwidget\fP 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file ganttchartbase\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const int GanttChartBase::machineHeight = \fBoperationHeight\fP * 3\fC [static]\fP"
+
+.PP
+Definition at line 19 of file ganttchartbase\&.h\&.
+.SS "const int GanttChartBase::machineHorizontalOffset = 35\fC [static]\fP"
+
+.PP
+Definition at line 20 of file ganttchartbase\&.h\&.
+.SS "int GanttChartBase::makespan\fC [protected]\fP"
+
+.PP
+Definition at line 33 of file ganttchartbase\&.h\&.
+.SS "const int GanttChartBase::operationHeight = 20\fC [static]\fP"
+
+.PP
+Definition at line 18 of file ganttchartbase\&.h\&.
+.SS "const int GanttChartBase::widthUnit = 10\fC [static]\fP"
+
+.PP
+Definition at line 17 of file ganttchartbase\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

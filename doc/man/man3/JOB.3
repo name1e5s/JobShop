@@ -1,0 +1,88 @@
+.TH "JOB" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+JOB
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <bottle\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBestime\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBmhtime\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBmagic\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBorder\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBprocess_time\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBstep\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBnext\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBprev\fP [\fBMAXMACHINE\fP]"
+.br
+.ti -1c
+.RI "int \fBstart\fP [\fBMAXMACHINE\fP]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Data representation for a job\&. 
+.PP
+Definition at line 43 of file bottle\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int JOB::estime[\fBMAXMACHINE\fP]"
+Earlist starting time of this job on each machine\&. Which is simply the sum of this job's processing times on the machine before [order[machine]] in this jobs prescribed ordering\&. 
+.PP
+Definition at line 44 of file bottle\&.h\&.
+.SS "int JOB::magic[\fBMAXMACHINE\fP]"
+The number generated and managed by the God in the computer\&. Every one who changed the name of this feild will be seen as an evil and will be cursed by the God\&. 
+.PP
+Definition at line 46 of file bottle\&.h\&.
+.SS "int JOB::mhtime[\fBMAXMACHINE\fP]"
+Minimum halting time of this job after [machine num]\&. Which is simply the sum of this job's processing times on the machine after [order[machine]] in this jobs prescribed ordering\&. 
+.PP
+Definition at line 45 of file bottle\&.h\&.
+.SS "int JOB::next[\fBMAXMACHINE\fP]"
+Next job on machine [i]\&. 
+.PP
+Definition at line 50 of file bottle\&.h\&.
+.SS "int JOB::order[\fBMAXMACHINE\fP]"
+Required machine order for the job\&. 
+.PP
+Definition at line 47 of file bottle\&.h\&.
+.SS "int JOB::prev[\fBMAXMACHINE\fP]"
+Previous job blah blah\&. 
+.PP
+Definition at line 51 of file bottle\&.h\&.
+.SS "int JOB::process_time[\fBMAXMACHINE\fP]"
+Process time of each machine\&. 
+.PP
+Definition at line 48 of file bottle\&.h\&.
+.SS "int JOB::start[\fBMAXMACHINE\fP]"
+Start time of this job on each machine\&. 
+.PP
+Definition at line 52 of file bottle\&.h\&.
+.SS "int JOB::step[\fBMAXMACHINE\fP]"
+Solution step indexed by machine\&. 
+.PP
+Definition at line 49 of file bottle\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

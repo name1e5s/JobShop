@@ -1,0 +1,93 @@
+.TH "GanttChartOperation" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GanttChartOperation
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ganttchartoperation\&.h>\fP
+.PP
+Inherits QGraphicsRectItem\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGanttChartOperation\fP (const QString &id, int time, QColor color)"
+.br
+.RI "Construct a \fBGanttChartOperation\fP class\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpaint\fP (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)"
+.br
+.RI "Paint this operation\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBm_id\fP"
+.br
+.ti -1c
+.RI "QColor \fBm_color\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file ganttchartoperation\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GanttChartOperation::GanttChartOperation (const QString & id, int time, QColor color)"
+
+.PP
+Construct a \fBGanttChartOperation\fP class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIid\fP Job id\&. 
+.br
+\fItime\fP Start time\&. 
+.br
+\fIcolor\fP Color of this operation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 20 of file ganttchartoperation\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void GanttChartOperation::paint (QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)\fC [protected]\fP"
+
+.PP
+Paint this operation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpainter\fP 
+.br
+\fIoption\fP 
+.br
+\fIwidget\fP 
+.RE
+.PP
+
+.PP
+Definition at line 34 of file ganttchartoperation\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QColor GanttChartOperation::m_color\fC [protected]\fP"
+
+.PP
+Definition at line 25 of file ganttchartoperation\&.h\&.
+.SS "QString GanttChartOperation::m_id\fC [protected]\fP"
+
+.PP
+Definition at line 24 of file ganttchartoperation\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

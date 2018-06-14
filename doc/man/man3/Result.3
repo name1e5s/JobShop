@@ -1,0 +1,125 @@
+.TH "Result" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Result
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <result\&.h>\fP
+.PP
+Inherits QDialog\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBResult\fP (\fBJobShop\fP *instance, QWidget *parent=0)"
+.br
+.RI "Construct the result window\&. "
+.ti -1c
+.RI "void \fBFix\fP (int machine, int clock, int duration)"
+.br
+.RI "Handle the fix command\&. "
+.ti -1c
+.RI "\fB~Result\fP ()"
+.br
+.RI "Delete the window\&. "
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBon_fixButton_clicked\fP ()"
+.br
+.RI "The action of fixButton\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::Result * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBJobShop\fP * \fBjssp\fP"
+.br
+.ti -1c
+.RI "\fBGanttChartBase\fP * \fBprivate_chart\fP"
+.br
+.ti -1c
+.RI "QGraphicsScene * \fBprivate_scene\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 24 of file result\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Result::Result (\fBJobShop\fP * instance, QWidget * parent = \fC0\fP)"
+
+.PP
+Construct the result window\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinstance\fP The instance class\&. 
+.br
+\fIparent\fP \&.\&.\&. 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file result\&.cpp\&.
+.SS "Result::~Result ()"
+
+.PP
+Delete the window\&. 
+.PP
+Definition at line 60 of file result\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Result::Fix (int machine, int clock, int duration)"
+
+.PP
+Handle the fix command\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImachine\fP 
+.br
+\fIclock\fP 
+.br
+\fIduration\fP 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file result\&.cpp\&.
+.SS "void Result::on_fixButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+The action of fixButton\&. 
+.PP
+Definition at line 136 of file result\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBJobShop\fP* Result::jssp\fC [private]\fP"
+
+.PP
+Definition at line 38 of file result\&.h\&.
+.SS "\fBGanttChartBase\fP* Result::private_chart\fC [private]\fP"
+
+.PP
+Definition at line 39 of file result\&.h\&.
+.SS "QGraphicsScene* Result::private_scene\fC [private]\fP"
+
+.PP
+Definition at line 40 of file result\&.h\&.
+.SS "Ui::Result* Result::ui\fC [private]\fP"
+
+.PP
+Definition at line 37 of file result\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

@@ -11,6 +11,12 @@
 #include <QDebug>
 #include <QPainter>
 
+/**
+ * @brief Construct a GanttChartOperation class
+ * @param id Job id.
+ * @param time Start time.
+ * @param color Color of this operation.
+ */
 GanttChartOperation::GanttChartOperation(const QString& id, int time, QColor color) :
     QGraphicsRectItem(nullptr),
     m_color(color)
@@ -19,21 +25,18 @@ GanttChartOperation::GanttChartOperation(const QString& id, int time, QColor col
     this->setRect(0, 0, time * GanttChartBase::widthUnit, GanttChartBase::operationHeight);
 }
 
-GanttChartOperation::~GanttChartOperation()
-{
-}
-
-void GanttChartOperation::setTime(int time)
-{
-    this->setRect(0, 0, time * GanttChartBase::widthUnit, GanttChartBase::operationHeight);
-}
-
+/**
+ * @brief Paint this operation.
+ * @param painter
+ * @param option
+ * @param widget
+ */
 void GanttChartOperation::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option);
     Q_UNUSED(widget);
 
-    QFont font("Helvetica", 10, QFont::Bold, false);
+    QFont font("Microsoft YaHei UI", 10, QFont::Bold, false);
     QPen pen;
     pen.setWidth(0);
 
