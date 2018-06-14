@@ -5,11 +5,12 @@
  * @author Name1e5s
  */
 
-#include <ganttchartoperation.h>
-#include <ganttchartbase.h>
-#include <cstdlib>
 #include <QDebug>
 #include <QPainter>
+#include <cstdlib>
+
+#include <ganttchartoperation.h>
+#include <ganttchartbase.h>
 
 /**
  * @brief Construct a GanttChartOperation class

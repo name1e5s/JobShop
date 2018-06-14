@@ -6,12 +6,15 @@
  * @author Name1e5s
  */
 
-#include <result.h>
-#include "ui_result.h"
-#include <jobshop.h>
 #include <QTextStream>
 #include <QApplication>
 #include <cstdlib>
+
+#include "ui_result.h"
+#include <result.h>
+
+#include <jobshop.h>
+
 extern int best_makespan;
 
 /**

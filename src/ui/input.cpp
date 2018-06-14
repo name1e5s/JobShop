@@ -5,10 +5,11 @@
  * @author Name1e5s
  */
 
-#include <input.h>
 #include "ui_input.h"
-#include <jobshop.h>
+#include <input.h>
 #include <result.h>
+
+#include <jobshop.h>
 
 /**
  * @brief Set the input window.

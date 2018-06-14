@@ -5,10 +5,12 @@
 * @brief Core algorithms.
 * @author Name1e5s
 */
-#include <stdio.h>
-#include <stdlib.h>
+
 #include <math.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 #include <bottle.h>
 
 #define TRY_COUNT 10

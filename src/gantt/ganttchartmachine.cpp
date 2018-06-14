@@ -5,16 +5,15 @@
  * @author Name1e5s
  */
 
-#include <arrow.h>
-#include <ganttchartbase.h>
-#include <ganttchartmachine.h>
-
-#include <QPen>
-#include <QtDebug>
+#include <QFont>
 #include <QGraphicsTextItem>
 #include <QGraphicsLineItem>
 #include <QPainter>
-#include <QFont>
+#include <QPen>
+
+#include <arrow.h>
+#include <ganttchartbase.h>
+#include <ganttchartmachine.h>
 
 /**
  * @brief Construct a machine class.

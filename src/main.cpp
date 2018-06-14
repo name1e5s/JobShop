@@ -5,6 +5,7 @@
  * @author Name1e5s
  */
 #include <QApplication>
+
 #include <input.h>
 
 int main(int ac,char *av[]) {

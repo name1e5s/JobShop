@@ -10,11 +10,14 @@
 
 #ifndef JOBSHOP_H
 #define JOBSHOP_H
-#include <bottle.h>
-#include <QString>
+
 #include <QObject>
+#include <QString>
 #include <QVector>
+
 #include <ganttchartbase.h>
+
+#include <bottle.h>
 
 struct Fixer {
     int machine;

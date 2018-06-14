@@ -7,7 +7,9 @@
 
 #ifndef GANTTCHARTBASE_H
 #define GANTTCHARTBASE_H
+
 #include <QGraphicsItem>
+
 class GanttChartBase:public QGraphicsItem
 {
     Q_INTERFACES(QGraphicsItem)

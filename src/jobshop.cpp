@@ -5,14 +5,16 @@
  * @author Name1e5s
  */
 
-#include <jobshop.h>
-#include <bottle.h>
+#include <QTextStream>
+#include <cstdlib>
+#include <ctime>
+
 #include <ganttchartbase.h>
 #include <ganttchartmachine.h>
 #include <ganttchartoperation.h>
-#include <cstdlib>
-#include <ctime>
-#include <QTextStream>
+
+#include <bottle.h>
+#include <jobshop.h>
 extern int best_makespan;
 
 /**

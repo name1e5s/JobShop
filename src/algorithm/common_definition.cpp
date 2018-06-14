@@ -1,4 +1,5 @@
 #include <bottle.h>
+
 /** @var job
   Data representation of all the jobs. All operations runs on this varible.
 */

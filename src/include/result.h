@@ -12,9 +12,11 @@
 #define RESULT_H
 
 #include <QDialog>
+
 #include <ganttchartbase.h>
 #include <ganttchartmachine.h>
 #include <ganttchartoperation.h>
+
 #include <jobshop.h>
 
 namespace Ui {

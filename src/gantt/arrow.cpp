@@ -5,11 +5,12 @@
  * @author Name1e5s
  */
 
-#include <arrow.h>
-
 #include <QtGui>
+
 #define USE_MATH_DEFINES
 #include <cmath>
+
+#include <arrow.h>
 
 const qreal Pi = M_PI;
 const qreal arrowSize = 10;

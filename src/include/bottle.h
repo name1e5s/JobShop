@@ -12,9 +12,7 @@
 
 #ifndef BOTTLE_H_INCLUDED
 #define BOTTLE_H_INCLUDED
-#ifdef _MSC_VER
-//#pragma comment(linker, "/STACK:1024000000,1024000000")
-#endif
+
  /** @def MAXJOB
   The most jobs this program can handle.
  */

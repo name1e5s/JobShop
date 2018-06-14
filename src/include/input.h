@@ -9,6 +9,7 @@
 #define INPUT_H
 
 #include <QMainWindow>
+
 #include <jobshop.h>
 
 namespace Ui {

@@ -5,18 +5,18 @@
  * @author Name1e5s
  */
 
-#include <ganttchartbase.h>
-#include <bottle.h>
-#include <algorithm>
-#include <QGraphicsSimpleTextItem>
 #include <QGraphicsLineItem>
+#include <QGraphicsScene>
+#include <QGraphicsSimpleTextItem>
 #include <QFont>
 #include <QPen>
-#include <QtSvg/QSvgGenerator>
 #include <QPainter>
-#include <QtDebug>
 #include <QStyleOptionGraphicsItem>
-#include <QGraphicsScene>
+#include <algorithm>
+
+#include <ganttchartbase.h>
+
+#include <bottle.h>
 
 /**
  * @brief Construct a gantt chart.
