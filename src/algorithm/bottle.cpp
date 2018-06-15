@@ -1,5 +1,5 @@
 /**
-* @file bottle.c
+* @file bottle.cpp
 * Core algorithms to solve the JSSP.
 *
 * @brief Core algorithms.

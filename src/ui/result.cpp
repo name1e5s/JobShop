@@ -12,7 +12,10 @@
 
 #include "ui_result.h"
 #include <result.h>
+#include <ganttchartprogress.h>
+#include <ganttchartbase.h>
 
+#include <bottle.h>
 #include <jobshop.h>
 
 extern int best_makespan;
@@ -52,9 +55,20 @@ Result::Result(JobShop *instance,QWidget *parent) :
     private_scene = new QGraphicsScene(this);
     private_scene->addItem(private_chart);
 
+    GanttChartProgress* progress = new GanttChartProgress(1.0,this);
+    private_line = new QGraphicsLineItem(GanttChartBase::machineHorizontalOffset,GanttChartBase::operationHeight, \
+                                         GanttChartBase::machineHorizontalOffset, \
+                                         GanttChartBase::machineHeight * machine_size + \
+                                         GanttChartBase::operationHeight);
+    private_scene->addItem(private_line);
+    private_line->setPen(QPen(Qt::green,10));
     ui->resuleGanttChart->setScene(private_scene);
     ui->resuleGanttChart->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     connect(ui->fixButton,&QPushButton::toggled,this,&Result::on_fixButton_clicked);
+    connect(ui->speedSpinBox,QOverload<double>::of(&QDoubleSpinBox::valueChanged),progress,&GanttChartProgress::setSpeed);
+    connect(progress,&GanttChartProgress::updateline,this,&Result::on_line_updated);
+    connect(this,&Result::destroyed,progress,&GanttChartProgress::terminate);
+    progress->start();
 }
 
 /**
@@ -91,7 +105,7 @@ void Result::Fix(int machine, int clock ,int duration) {
             break;
         }
         if(pairs[i].endtime >= clock) {
-            if(i != 9) {
+            if(i != job_size - 1) {
                 index = 2;
                 break;
             } else {
@@ -118,11 +132,14 @@ void Result::Fix(int machine, int clock ,int duration) {
         next_starttime = 0x7fffffff;
     }
 
-    for(int i = 0; i < job_size; i ++) {
-        for(int j = 0; j < machine_size; j ++) {
-            if(job[i].start[j] >= next_starttime)
-                job[i].start[j] += real_duration;
+    if(index != 3) {
+        for(int i = 0; i < job_size; i ++) {
+            for(int j = 0; j < machine_size; j ++) {
+                if(job[i].start[j] >= next_starttime)
+                    job[i].start[j] += real_duration;
+            }
         }
+        best_makespan += real_duration;
     }
 
     Fixer *f = new Fixer;
@@ -130,7 +147,6 @@ void Result::Fix(int machine, int clock ,int duration) {
     f->duration = duration;
     f->machine = machine;
     this->jssp->fixer.append(f);
-    best_makespan += real_duration;
 }
 
 /**
@@ -149,4 +165,15 @@ void Result::on_fixButton_clicked()
     private_chart = jssp->generateGantt();
     private_scene->addItem(private_chart);
     ui->resuleGanttChart->update();
+}
+
+void Result::on_line_updated(int time) {
+    QLineF line = private_line->line();
+    line.setPoints(QPointF( GanttChartBase::machineHorizontalOffset + time * GanttChartBase::widthUnit, \
+                           GanttChartBase::operationHeight),QPointF( \
+                       GanttChartBase::machineHorizontalOffset + time * GanttChartBase::widthUnit, \
+                       GanttChartBase::machineHeight * machine_size + \
+                       GanttChartBase::operationHeight));
+    private_line->setLine(line);
+    private_scene->update();
 }

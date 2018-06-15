@@ -6,7 +6,7 @@
 # | |__| |____) |___) | |       ____) | (_) | |\ V /  __/ |
 #  \____/|_____/_____/|_|      |_____/ \___/|_| \_/ \___|_|
 #
-#      Yet Another JSSP Solver by Name1e5s -- QT Ver.
+#     Yet Another JSSP Solver by Name1e5s -- QT Ver.iota
 ###############################################################
 
 QT       += core gui
@@ -27,17 +27,19 @@ INCLUDEPATH += $$PWD/include
 
 SOURCES += \
         main.cpp                            \
-        jobshop.cpp                         \
         algorithm/bottle.cpp                \
         algorithm/common_definition.cpp     \
         algorithm/eval.cpp                  \
         algorithm/onemachine.cpp            \
+        console/io.cpp                      \
         gantt/arrow.cpp                     \
         gantt/ganttchartbase.cpp            \
         gantt/ganttchartmachine.cpp         \
+        gantt/ganttchartprogress.cpp        \
         gantt/ganttchartoperation.cpp       \
         ui/input.cpp                        \
-	ui/result.cpp						
+        ui/result.cpp                       \
+        wrapper/jobshop.cpp
 
 HEADERS += \
         include/bottle.h                    \
@@ -45,6 +47,7 @@ HEADERS += \
         include/arrow.h                     \
         include/ganttchartbase.h            \
         include/ganttchartmachine.h         \
+        include/ganttchartprogress.h        \
         include/ganttchartoperation.h       \
         include/input.h                     \
         include/result.h

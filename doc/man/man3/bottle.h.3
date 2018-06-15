@@ -1,8 +1,8 @@
-.TH "include/bottle.h" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.TH "D:/Projects/JSSP-QT/src/include/bottle.h" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-include/bottle.h \- Header file for the whole project\&.  
+D:/Projects/JSSP-QT/src/include/bottle.h \- Header file for the whole project\&.  
 
 .SH SYNOPSIS
 .br
@@ -97,19 +97,19 @@ Definition in file \fBbottle\&.h\fP\&.
 .SS "#define INFINITAS   0x7fffffff"
 A integer that can be seen as infinity -- should be bigger than the biggest makespan of all the instances\&. Hence, 0x7fffffff (a\&.k\&.a INT_MAX) is a good choice 
 .PP
-Definition at line 33 of file bottle\&.h\&.
+Definition at line 31 of file bottle\&.h\&.
 .SS "#define MAX(a, b)   ((a) > (b) ? (a) : (b))"
 A regular macro that returns the bigger value bewteen a and b\&. 
 .PP
-Definition at line 38 of file bottle\&.h\&.
+Definition at line 36 of file bottle\&.h\&.
 .SS "#define MAXJOB   30"
 The most jobs this program can handle\&. 
 .PP
-Definition at line 21 of file bottle\&.h\&.
+Definition at line 19 of file bottle\&.h\&.
 .SS "#define MAXMACHINE   30"
 The most machines this program can handle\&. 
 .PP
-Definition at line 26 of file bottle\&.h\&.
+Definition at line 24 of file bottle\&.h\&.
 .SH "Typedef Documentation"
 .PP 
 .SS "typedef struct \fBJOB\fP  \fBjob_t\fP"
@@ -137,31 +137,40 @@ makespan
 .PP
 
 .PP
-Definition at line 41 of file onemachine\&.cpp\&.
+Definition at line 42 of file onemachine\&.cpp\&.
 .SS "void prestissimo (void)"
+Convert internal solution representation structure to the format required by those nitpickers and print it\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Instance file path 
+.RE
+.PP
 
+.PP
+Definition at line 63 of file io\&.cpp\&.
 .SS "void run_bottle_neck (void)"
 Driver of the Shifting Bottleneck Procedure We can change here to have a balance bewteen run time and makespan\&.\&.\&.
 .PP
-Definition at line 65 of file bottle\&.cpp\&.
+Definition at line 67 of file bottle\&.cpp\&.
 .SH "Variable Documentation"
 .PP 
 .SS "\fBjob_t\fP job[\fBMAXJOB\fP]"
 Data representation of all the jobs\&. All operations runs on this varible\&. 
 .PP
-Definition at line 5 of file common_definition\&.cpp\&.
+Definition at line 11 of file common_definition\&.cpp\&.
 .SS "int job_size"
 Job number in this instance\&. 
 .PP
-Definition at line 10 of file common_definition\&.cpp\&.
+Definition at line 16 of file common_definition\&.cpp\&.
 .SS "int machine_size"
 Machine number in this instance\&. 
 .PP
-Definition at line 15 of file common_definition\&.cpp\&.
+Definition at line 21 of file common_definition\&.cpp\&.
 .SS "int terminate_flag"
 Should we stop??? 
 .PP
-Definition at line 20 of file common_definition\&.cpp\&.
+Definition at line 26 of file common_definition\&.cpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for JSSP Solver from the source code\&.

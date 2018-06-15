@@ -66,7 +66,7 @@ void JobShop::getProb(QString str) {
  * @brief Run the awesome soler algorithm
  */
 void JobShop::runProb() {
-    run_bottle_neck();
+    prestissimo();
 }
 
 /**

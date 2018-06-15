@@ -1,5 +1,5 @@
 /**
-* @file onemachine.c
+* @file onemachine.cpp
 * One-machine Sequencing Algorithm from Jacques Carlier
 *
 * @brief One-machine sequencing

@@ -1,18 +1,19 @@
-.TH "algorithm/bottle.cpp" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.TH "D:/Projects/JSSP-QT/src/algorithm/bottle.cpp" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-algorithm/bottle.cpp
+D:/Projects/JSSP-QT/src/algorithm/bottle.cpp \- Core algorithms\&.  
+
 .SH SYNOPSIS
 .br
 .PP
-\fC#include <stdio\&.h>\fP
-.br
-\fC#include <stdlib\&.h>\fP
-.br
 \fC#include <math\&.h>\fP
 .br
 \fC#include <time\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
 .br
 \fC#include <bottle\&.h>\fP
 .br
@@ -102,12 +103,26 @@ algorithm/bottle.cpp
 .br
 .RI "Store the best makespan value\&. "
 .in -1c
+.SH "Detailed Description"
+.PP 
+Core algorithms\&. 
+
+Core algorithms to solve the JSSP\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Name1e5s 
+.RE
+.PP
+
+.PP
+Definition in file \fBbottle\&.cpp\fP\&.
 .SH "Macro Definition Documentation"
 .PP 
 .SS "#define TRY_COUNT   10"
 
 .PP
-Definition at line 14 of file bottle\&.cpp\&.
+Definition at line 16 of file bottle\&.cpp\&.
 .SH "Typedef Documentation"
 .PP 
 .SS "typedef struct \fBBLIST\fP  \fBblist_t\fP"
@@ -132,7 +147,7 @@ Store current sequence of machine N in the given address\&. Then just clear the 
 .PP
 
 .PP
-Definition at line 366 of file bottle\&.cpp\&.
+Definition at line 368 of file bottle\&.cpp\&.
 .SS "static void clear_seq (\fBsequence_t\fP * seq, int machine)\fC [inline]\fP, \fC [static]\fP"
 Clear the sequence\&.
 .PP
@@ -145,19 +160,19 @@ Clear the sequence\&.
 .PP
 
 .PP
-Definition at line 382 of file bottle\&.cpp\&.
+Definition at line 384 of file bottle\&.cpp\&.
 .SS "static void cp_mo (\fBmo_t\fP * mew, \fBmo_t\fP * origin)\fC [inline]\fP, \fC [static]\fP"
 Copy the origin machine order to mew\&. 
 .PP
-Definition at line 352 of file bottle\&.cpp\&.
+Definition at line 354 of file bottle\&.cpp\&.
 .SS "static void cp_neighbor (\fBneighbor_t\fP * mew)\fC [inline]\fP, \fC [static]\fP"
 Store neighbor to a neighbor_t varible\&. 
 .PP
-Definition at line 421 of file bottle\&.cpp\&.
+Definition at line 423 of file bottle\&.cpp\&.
 .SS "static void cp_seq (\fBsequence_t\fP * mew, \fBsequence_t\fP * origin)\fC [inline]\fP, \fC [static]\fP"
 Copy the origin sequence order to mew\&. 
 .PP
-Definition at line 394 of file bottle\&.cpp\&.
+Definition at line 396 of file bottle\&.cpp\&.
 .SS "static int critical (int machine, int makespan)\fC [inline]\fP, \fC [static]\fP"
 Test wether the machine is the critical machine, which means the end of the procedure of this machine is also the end of all the operations\&.
 .PP
@@ -175,7 +190,7 @@ If the machine is the critical machine, return 1\&. Else return 0\&.
 .PP
 
 .PP
-Definition at line 342 of file bottle\&.cpp\&.
+Definition at line 344 of file bottle\&.cpp\&.
 .SS "int eval (\fBsequence_t\fP * seq)"
 Evaluate the makespan of the given sequence\&.
 .PP
@@ -206,7 +221,7 @@ The re-optimization\&.\&.\&. Phase 1
 .PP
 
 .PP
-Definition at line 217 of file bottle\&.cpp\&.
+Definition at line 219 of file bottle\&.cpp\&.
 .SS "static void re_optimization_phase_2 (\fBsequence_t\fP * seq, \fBmo_t\fP * machine_order, int * makespan)\fC [inline]\fP, \fC [static]\fP"
 The re-optimization\&.\&.\&. Phase 2
 .PP
@@ -221,15 +236,15 @@ The re-optimization\&.\&.\&. Phase 2
 .PP
 
 .PP
-Definition at line 282 of file bottle\&.cpp\&.
+Definition at line 284 of file bottle\&.cpp\&.
 .SS "static void restore_neighbor (\fBneighbor_t\fP * old)\fC [inline]\fP, \fC [static]\fP"
 Load neighbor from a neighbor_t varible\&. 
 .PP
-Definition at line 432 of file bottle\&.cpp\&.
+Definition at line 434 of file bottle\&.cpp\&.
 .SS "static void save_times (void)\fC [inline]\fP, \fC [static]\fP"
 Save current start time of each operation\&. 
 .PP
-Definition at line 444 of file bottle\&.cpp\&.
+Definition at line 446 of file bottle\&.cpp\&.
 .SS "static void set_seq (\fBsequence_t\fP * seq, int machine, int * order)\fC [inline]\fP, \fC [static]\fP"
 Set sequence by the given order\&.
 .PP
@@ -244,7 +259,7 @@ Set sequence by the given order\&.
 .PP
 
 .PP
-Definition at line 407 of file bottle\&.cpp\&.
+Definition at line 409 of file bottle\&.cpp\&.
 .SS "static void shifting_bottle_neck (\fBsequence_t\fP * seq, \fBmo_t\fP * machine_order, int * try_time_set)\fC [inline]\fP, \fC [static]\fP"
 
 .PP
@@ -266,7 +281,7 @@ When the procedure is done\&. You should find the start time of the solution at 
 .PP
 
 .PP
-Definition at line 117 of file bottle\&.cpp\&.
+Definition at line 119 of file bottle\&.cpp\&.
 .SH "Variable Documentation"
 .PP 
 .SS "best_makespan = \fBINFINITAS\fP"
@@ -274,7 +289,7 @@ Definition at line 117 of file bottle\&.cpp\&.
 .PP
 Store the best makespan value\&. 
 .PP
-Definition at line 45 of file bottle\&.cpp\&.
+Definition at line 47 of file bottle\&.cpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for JSSP Solver from the source code\&.

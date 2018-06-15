@@ -1,8 +1,9 @@
-.TH "algorithm/onemachine.cpp" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.TH "D:/Projects/JSSP-QT/src/algorithm/onemachine.cpp" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-algorithm/onemachine.cpp
+D:/Projects/JSSP-QT/src/algorithm/onemachine.cpp \- One-machine sequencing\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -56,12 +57,26 @@ algorithm/onemachine.cpp
 .RI "int \fBone_machine\fP (\fBonemach_times_t\fP one, int *bestorder)"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+One-machine sequencing\&. 
+
+One-machine Sequencing Algorithm from Jacques Carlier
+.PP
+\fBAuthor:\fP
+.RS 4
+TJenica 
+.RE
+.PP
+
+.PP
+Definition in file \fBonemachine\&.cpp\fP\&.
 .SH "Macro Definition Documentation"
 .PP 
 .SS "#define ONEMACH_BBNODES   300"
 Nodes number of the branch and bound tree to solve the one machine sequencing problem\&. 
 .PP
-Definition at line 17 of file onemachine\&.cpp\&.
+Definition at line 18 of file onemachine\&.cpp\&.
 .SH "Typedef Documentation"
 .PP 
 .SS "typedef struct \fBONEMACHINE_BRANCH_AND_BOUND_ASSISTANT\fP  \fBonemach_bb_ass_t\fP"
@@ -71,7 +86,7 @@ Info of node of a branch and bound tree\&.
 .SS "static void cp_onemach_time (\fBonemach_times_t\fP * mew, \fBonemach_times_t\fP * origin)\fC [inline]\fP, \fC [static]\fP"
 Copy origin onemach_times struct to mew By practice, change from memcpy to just write what we want to do is very important\&.\&.\&. 
 .PP
-Definition at line 159 of file onemachine\&.cpp\&.
+Definition at line 160 of file onemachine\&.cpp\&.
 .SS "static int lower_bound (\fBonemach_times_t\fP one, int * job_set, int job_set_size)\fC [inline]\fP, \fC [static]\fP"
 Find the lower bound of the given machine on the given job order\&.
 .PP
@@ -91,7 +106,7 @@ Lowerbound of the machine\&. Which is just the sum of minimum estime and minimum
 .PP
 
 .PP
-Definition at line 245 of file onemachine\&.cpp\&.
+Definition at line 246 of file onemachine\&.cpp\&.
 .SS "static int make_span (\fBonemach_times_t\fP one, int * order, int * job_set, int * job_set_size, int * critical_job_order, int * terminate_job_order, int * make)\fC [inline]\fP, \fC [static]\fP"
 Test if the job order is feasible and compute the make_span\&.
 .PP
@@ -119,7 +134,7 @@ If the order is OK return 1,else return 0\&.
 .PP
 
 .PP
-Definition at line 277 of file onemachine\&.cpp\&.
+Definition at line 278 of file onemachine\&.cpp\&.
 .SS "static int make_value (\fBonemach_times_t\fP one, int * order)\fC [inline]\fP, \fC [static]\fP"
 Compute the makespan of the given job order\&.
 .PP
@@ -130,11 +145,11 @@ Compute the makespan of the given job order\&.
 .PP
 
 .PP
-Definition at line 222 of file onemachine\&.cpp\&.
+Definition at line 223 of file onemachine\&.cpp\&.
 .SS "static void mwr_schedule (\fBonemach_times_t\fP one, int * order)\fC [inline]\fP, \fC [static]\fP"
 Algorithm to find the most work remaining schedule by Schrage 
 .PP
-Definition at line 170 of file onemachine\&.cpp\&.
+Definition at line 171 of file onemachine\&.cpp\&.
 .SS "int one_machine (\fBonemach_times_t\fP one, int * bestorder)"
 The one-machine sequencing algorithm from 'The one-machine sequencing problem' by Jacques Carlier\&.
 .PP
@@ -152,7 +167,7 @@ makespan
 .PP
 
 .PP
-Definition at line 41 of file onemachine\&.cpp\&.
+Definition at line 42 of file onemachine\&.cpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for JSSP Solver from the source code\&.

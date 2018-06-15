@@ -1,4 +1,4 @@
-.TH "Result" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.TH "Result" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -33,6 +33,9 @@ Inherits QDialog\&.
 .RI "void \fBon_fixButton_clicked\fP ()"
 .br
 .RI "The action of fixButton\&. "
+.ti -1c
+.RI "void \fBon_line_updated\fP (int time)"
+.br
 .in -1c
 .SS "Private Attributes"
 
@@ -47,12 +50,15 @@ Inherits QDialog\&.
 .RI "\fBGanttChartBase\fP * \fBprivate_chart\fP"
 .br
 .ti -1c
+.RI "QGraphicsLineItem * \fBprivate_line\fP"
+.br
+.ti -1c
 .RI "QGraphicsScene * \fBprivate_scene\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 24 of file result\&.h\&.
+Definition at line 26 of file result\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Result::Result (\fBJobShop\fP * instance, QWidget * parent = \fC0\fP)"
@@ -69,13 +75,13 @@ Construct the result window\&.
 .PP
 
 .PP
-Definition at line 42 of file result\&.cpp\&.
+Definition at line 48 of file result\&.cpp\&.
 .SS "Result::~Result ()"
 
 .PP
 Delete the window\&. 
 .PP
-Definition at line 60 of file result\&.cpp\&.
+Definition at line 77 of file result\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Result::Fix (int machine, int clock, int duration)"
@@ -94,31 +100,39 @@ Handle the fix command\&.
 .PP
 
 .PP
-Definition at line 72 of file result\&.cpp\&.
+Definition at line 89 of file result\&.cpp\&.
 .SS "void Result::on_fixButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
 
 .PP
 The action of fixButton\&. 
 .PP
-Definition at line 136 of file result\&.cpp\&.
+Definition at line 155 of file result\&.cpp\&.
+.SS "void Result::on_line_updated (int time)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 170 of file result\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBJobShop\fP* Result::jssp\fC [private]\fP"
 
 .PP
-Definition at line 38 of file result\&.h\&.
+Definition at line 41 of file result\&.h\&.
 .SS "\fBGanttChartBase\fP* Result::private_chart\fC [private]\fP"
 
 .PP
-Definition at line 39 of file result\&.h\&.
+Definition at line 42 of file result\&.h\&.
+.SS "QGraphicsLineItem* Result::private_line\fC [private]\fP"
+
+.PP
+Definition at line 43 of file result\&.h\&.
 .SS "QGraphicsScene* Result::private_scene\fC [private]\fP"
 
 .PP
-Definition at line 40 of file result\&.h\&.
+Definition at line 44 of file result\&.h\&.
 .SS "Ui::Result* Result::ui\fC [private]\fP"
 
 .PP
-Definition at line 37 of file result\&.h\&.
+Definition at line 40 of file result\&.h\&.
 
 .SH "Author"
 .PP 

@@ -1,0 +1,147 @@
+.TH "D:/Projects/JSSP-QT/src/console/io.cpp" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+D:/Projects/JSSP-QT/src/console/io.cpp \- IO\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <bottle\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPAIR_ASSISTANT_TYPE\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBPAIR_ASSISTANT_TYPE\fP \fBpair_ass_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBwrite_file\fP (char *file_name, int ans, \fBpair_ass_t\fP *pairs, float times)"
+.br
+.ti -1c
+.RI "int \fBmachine_sort_cmp\fP (const void *a, const void *b)"
+.br
+.ti -1c
+.RI "int \fBstarttime_sort_cmp\fP (const void *a, const void *b)"
+.br
+.ti -1c
+.RI "void \fBprestissimo\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBbest_makespan\fP"
+.br
+.RI "Store the best makespan value\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+IO\&. 
+
+Functions to handle input and output\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+TJenica 
+.RE
+.PP
+
+.PP
+Definition in file \fBio\&.cpp\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBPAIR_ASSISTANT_TYPE\fP  \fBpair_ass_t\fP"
+A temporary struct for converting the internal representation of the solution to the format required by those soreheads\&. 
+.SH "Function Documentation"
+.PP 
+.SS "int machine_sort_cmp (const void * a, const void * b)"
+Function to compare machine number of two pairs for qsort\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP The first pair\&. 
+.br
+\fIb\fP The second pair\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If machine number of a is lesser than b, then return a positive value, else return a non-positive value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file io\&.cpp\&.
+.SS "void prestissimo (void)"
+Convert internal solution representation structure to the format required by those nitpickers and print it\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilename\fP Instance file path 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file io\&.cpp\&.
+.SS "int starttime_sort_cmp (const void * a, const void * b)"
+Function to compare start time of two pairs for qsort\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIa\fP The first pair\&. 
+.br
+\fIb\fP The second pair\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If start time of a is lesser than b, then return a positive value, else return a non-positive value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file io\&.cpp\&.
+.SS "static void write_file (char * file_name, int ans, \fBpair_ass_t\fP * pairs, float times)\fC [inline]\fP, \fC [static]\fP"
+Print result to file\&.\&.\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile_name\fP Instance file path 
+.br
+\fIpairs\fP Pair to be printed\&.\&.\&. 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file io\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "int best_makespan"
+
+.PP
+Store the best makespan value\&. 
+.PP
+Definition at line 47 of file bottle\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for JSSP Solver from the source code\&.

@@ -1,4 +1,4 @@
-.TH "JobShop" 3 "Thu Jun 14 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.TH "JobShop" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -69,7 +69,7 @@ Inherits QObject\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 26 of file jobshop\&.h\&.
+Definition at line 29 of file jobshop\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "JobShop::JobShop ()"
@@ -77,7 +77,7 @@ Definition at line 26 of file jobshop\&.h\&.
 .PP
 Get pointers of previous defined varibles\&. 
 .PP
-Definition at line 21 of file jobshop\&.cpp\&.
+Definition at line 23 of file jobshop\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBGanttChartBase\fP * JobShop::generateGantt ()"
@@ -92,19 +92,19 @@ The gantt chart\&.
 .PP
 
 .PP
-Definition at line 74 of file jobshop\&.cpp\&.
+Definition at line 76 of file jobshop\&.cpp\&.
 .SS "\fBjob_t\fP* JobShop::getJob ()\fC [inline]\fP"
 
 .PP
-Definition at line 31 of file jobshop\&.h\&.
+Definition at line 34 of file jobshop\&.h\&.
 .SS "int JobShop::getJobSize ()\fC [inline]\fP"
 
 .PP
-Definition at line 32 of file jobshop\&.h\&.
+Definition at line 35 of file jobshop\&.h\&.
 .SS "int JobShop::getMachineSize ()\fC [inline]\fP"
 
 .PP
-Definition at line 33 of file jobshop\&.h\&.
+Definition at line 36 of file jobshop\&.h\&.
 .SS "void JobShop::getProb (QString str)"
 
 .PP
@@ -117,13 +117,13 @@ Read innstance file from the given str\&.
 .PP
 
 .PP
-Definition at line 49 of file jobshop\&.cpp\&.
+Definition at line 51 of file jobshop\&.cpp\&.
 .SS "void JobShop::runProb ()"
 
 .PP
 Run the awesome soler algorithm\&. 
 .PP
-Definition at line 66 of file jobshop\&.cpp\&.
+Definition at line 68 of file jobshop\&.cpp\&.
 .SS "void JobShop::setJobSize (int i)"
 
 .PP
@@ -136,7 +136,7 @@ Set job size using the given value\&.
 .PP
 
 .PP
-Definition at line 33 of file jobshop\&.cpp\&.
+Definition at line 35 of file jobshop\&.cpp\&.
 .SS "void JobShop::setMachineSize (int i)"
 
 .PP
@@ -149,25 +149,25 @@ Set machine size using the given value\&.
 .PP
 
 .PP
-Definition at line 41 of file jobshop\&.cpp\&.
+Definition at line 43 of file jobshop\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "QVector<\fBFixer\fP*> JobShop::fixer"
 
 .PP
-Definition at line 39 of file jobshop\&.h\&.
+Definition at line 42 of file jobshop\&.h\&.
 .SS "\fBjob_t\fP* JobShop::m_job\fC [private]\fP"
 
 .PP
-Definition at line 41 of file jobshop\&.h\&.
+Definition at line 44 of file jobshop\&.h\&.
 .SS "int* JobShop::m_job_size\fC [private]\fP"
 
 .PP
-Definition at line 42 of file jobshop\&.h\&.
+Definition at line 45 of file jobshop\&.h\&.
 .SS "int* JobShop::m_machine_size\fC [private]\fP"
 
 .PP
-Definition at line 43 of file jobshop\&.h\&.
+Definition at line 46 of file jobshop\&.h\&.
 
 .SH "Author"
 .PP 

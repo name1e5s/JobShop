@@ -1,3 +1,8 @@
+/**
+ * @file common_definition.cpp
+ *
+ * @author Name1e5s
+ */
 #include <bottle.h>
 
 /** @var job

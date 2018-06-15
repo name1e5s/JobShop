@@ -34,11 +34,13 @@ public:
 
 private slots:
     void on_fixButton_clicked();
+    void on_line_updated(int time);
 
 private:
     Ui::Result *ui;
     JobShop *jssp;
     GanttChartBase *private_chart;
+    QGraphicsLineItem* private_line;
     QGraphicsScene *private_scene;
 };
 

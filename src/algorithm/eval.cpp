@@ -1,5 +1,5 @@
 /**
-* @file eval.c
+* @file eval.cpp
 * Function to calcuate makespan.
 *
 * @brief makespan
