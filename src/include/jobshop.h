@@ -31,9 +31,9 @@ class JobShop:public QObject
     Q_OBJECT
 public:
     JobShop();
-    job_t *getJob() {return m_job;}
-    int getJobSize() {return *m_job_size;}
-    int getMachineSize() {return *m_machine_size;}
+    job_t *getJob() {return privateJob;}
+    int getJobSize() {return *privateJobSize;}
+    int getMachineSize() {return *privateMachineSize;}
     void setJobSize(int i);
     void setMachineSize(int i);
     void getProb(QString);
@@ -41,9 +41,9 @@ public:
     void runProb();
     QVector<Fixer*> fixer;
 private:
-    job_t *m_job;
-    int *m_job_size;
-    int *m_machine_size;
+    job_t *privateJob;
+    int *privateJobSize;
+    int *privateMachineSize;
 };
 
 #endif // JOBSHOP_H

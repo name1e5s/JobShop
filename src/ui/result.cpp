@@ -51,18 +51,18 @@ Result::Result(JobShop *instance,QWidget *parent) :
     jssp(instance)
 {
     ui->setupUi(this);
-    private_chart = instance->generateGantt();
-    private_scene = new QGraphicsScene(this);
-    private_scene->addItem(private_chart);
+    privateChart = instance->generateGantt();
+    privateScene = new QGraphicsScene(this);
+    privateScene->addItem(privateChart);
 
     GanttChartProgress* progress = new GanttChartProgress(1.0,this);
-    private_line = new QGraphicsLineItem(GanttChartBase::machineHorizontalOffset,GanttChartBase::operationHeight, \
+    privateLine = new QGraphicsLineItem(GanttChartBase::machineHorizontalOffset,GanttChartBase::operationHeight, \
                                          GanttChartBase::machineHorizontalOffset, \
                                          GanttChartBase::machineHeight * machine_size + \
                                          GanttChartBase::operationHeight);
-    private_scene->addItem(private_line);
-    private_line->setPen(QPen(Qt::green,10));
-    ui->resuleGanttChart->setScene(private_scene);
+    privateScene->addItem(privateLine);
+    privateLine->setPen(QPen(Qt::green,10));
+    ui->resuleGanttChart->setScene(privateScene);
     ui->resuleGanttChart->setAlignment(Qt::AlignLeft | Qt::AlignTop);
     connect(ui->fixButton,&QPushButton::toggled,this,&Result::on_fixButton_clicked);
     connect(ui->speedSpinBox,QOverload<double>::of(&QDoubleSpinBox::valueChanged),progress,&GanttChartProgress::setSpeed);
@@ -77,7 +77,7 @@ Result::Result(JobShop *instance,QWidget *parent) :
 Result::~Result()
 {
     delete ui;
-    delete private_chart;
+    delete privateChart;
 }
 
 /**
@@ -161,19 +161,19 @@ void Result::on_fixButton_clicked()
     QTextStream stream(&str);
     stream >> clock >> machine >> duration;
     this->Fix(machine,clock,duration);
-    private_scene->removeItem(private_chart);
-    private_chart = jssp->generateGantt();
-    private_scene->addItem(private_chart);
+    privateScene->removeItem(privateChart);
+    privateChart = jssp->generateGantt();
+    privateScene->addItem(privateChart);
     ui->resuleGanttChart->update();
 }
 
 void Result::on_line_updated(int time) {
-    QLineF line = private_line->line();
+    QLineF line = privateLine->line();
     line.setPoints(QPointF( GanttChartBase::machineHorizontalOffset + time * GanttChartBase::widthUnit, \
                            GanttChartBase::operationHeight),QPointF( \
                        GanttChartBase::machineHorizontalOffset + time * GanttChartBase::widthUnit, \
                        GanttChartBase::machineHeight * machine_size + \
                        GanttChartBase::operationHeight));
-    private_line->setLine(line);
-    private_scene->update();
+    privateLine->setLine(line);
+    privateScene->update();
 }

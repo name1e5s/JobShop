@@ -39,9 +39,9 @@ private slots:
 private:
     Ui::Result *ui;
     JobShop *jssp;
-    GanttChartBase *private_chart;
-    QGraphicsLineItem* private_line;
-    QGraphicsScene *private_scene;
+    GanttChartBase *privateChart;
+    QGraphicsLineItem* privateLine;
+    QGraphicsScene *privateScene;
 };
 
 #endif // RESULT_H

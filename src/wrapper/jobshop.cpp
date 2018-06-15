@@ -21,11 +21,11 @@ extern int best_makespan;
  * @brief Get pointers of previous defined varibles.
  */
 JobShop::JobShop() {
-    m_job_size = &job_size;
-    m_machine_size = &machine_size;
-    *m_job_size = 1;
-    *m_machine_size = 1;
-    m_job = &job[0];
+    privateJobSize = &job_size;
+    privateMachineSize = &machine_size;
+    *privateJobSize = 1;
+    *privateMachineSize = 1;
+    privateJob = &job[0];
 }
 
 /**
@@ -33,7 +33,7 @@ JobShop::JobShop() {
  * @param i Given value from the spin box
  */
 void JobShop::setJobSize(int i) {
-    *m_job_size = i;
+    *privateJobSize = i;
 }
 
 /**
@@ -41,7 +41,7 @@ void JobShop::setJobSize(int i) {
  * @param i Given value from the spin box
  */
 void JobShop::setMachineSize(int i) {
-    *m_machine_size = i;
+    *privateMachineSize = i;
 }
 
 /**

@@ -34,8 +34,8 @@ Arrow::Arrow(QGraphicsItem *parent) :
 Arrow::Arrow(const QPointF &startPoint, const QPointF &endPoint, QGraphicsItem *parent) :
     QGraphicsLineItem(parent)
 {
-    private_startPoint = startPoint;
-    private_endPoint = endPoint;
+    privateStartpoint = startPoint;
+    privateEndpoint = endPoint;
 
     setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
@@ -51,7 +51,7 @@ QRectF Arrow::boundingRect() const {
 
 QPainterPath Arrow::shape() const {
     QPainterPath path = QGraphicsLineItem::shape();
-    path.addPolygon(private_arrowHead);
+    path.addPolygon(privateArrowhead);
     return path;
 }
 
@@ -70,7 +70,7 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *
     painter->setPen(myPen);
     painter->setBrush(myColor);
 
-    setLine(QLineF(private_endPoint, private_startPoint));
+    setLine(QLineF(privateEndpoint, privateStartpoint));
 
     double angle = ::acos(line().dx() / line().length());
     if (line().dy() >= 0)
@@ -79,25 +79,25 @@ void Arrow::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *
     QPointF arrowP1 = line().p1() + QPointF(sin(angle + Pi / 3) * arrowSize, cos(angle + Pi / 3) * arrowSize);
     QPointF arrowP2 = line().p1() + QPointF(sin(angle + Pi - Pi / 3) * arrowSize, cos(angle + Pi - Pi / 3) * arrowSize);
 
-    private_arrowHead.clear();
-    private_arrowHead << line().p1() << arrowP1 << arrowP2;
+    privateArrowhead.clear();
+    privateArrowhead << line().p1() << arrowP1 << arrowP2;
 
     painter->drawLine(line());
-    painter->drawPolygon(private_arrowHead);
+    painter->drawPolygon(privateArrowhead);
 }
 QPointF Arrow::endPoint() const{
-    return private_endPoint;
+    return privateEndpoint;
 }
 
 void Arrow::setEndPoint(const QPointF &endPoint){
-    private_endPoint = endPoint;
+    privateEndpoint = endPoint;
 }
 
 QPointF Arrow::startPoint() const{
-    return private_startPoint;
+    return privateStartpoint;
 }
 
 void Arrow::setStartPoint(const QPointF &startPoint) {
-    private_startPoint = startPoint;
+    privateStartpoint = startPoint;
 }
 

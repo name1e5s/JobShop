@@ -20,9 +20,9 @@
  */
 GanttChartOperation::GanttChartOperation(const QString& id, int time, QColor color) :
     QGraphicsRectItem(nullptr),
-    m_color(color)
+    privateColor(color)
 {
-    m_id = id;
+    privateId = id;
     this->setRect(0, 0, time * GanttChartBase::widthUnit, GanttChartBase::operationHeight);
 }
 
@@ -43,9 +43,9 @@ void GanttChartOperation::paint(QPainter *painter, const QStyleOptionGraphicsIte
 
     const QRectF& rect = this->rect();
     painter->setPen(pen);
-    painter->setBrush(QBrush(m_color));
+    painter->setBrush(QBrush(privateColor));
     painter->drawRect(rect);
 
     painter->setFont(font);
-    painter->drawText(rect, Qt::AlignCenter, m_id);
+    painter->drawText(rect, Qt::AlignCenter, privateId);
 }

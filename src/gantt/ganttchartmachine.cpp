@@ -22,10 +22,10 @@
  */
 GanttChartMachine::GanttChartMachine(const QString &id, QGraphicsItem *parent) :
     QGraphicsItem(parent),
-    machine_num(id),
+    machineNum(id),
     makespan(0)
 {
-    QGraphicsTextItem* text = new QGraphicsTextItem(machine_num, this);
+    QGraphicsTextItem* text = new QGraphicsTextItem(machineNum, this);
     text->setPos(0, GanttChartBase::machineHeight/2);
     text->setFont(QFont("Arial", 12, QFont::Normal, false));
 
@@ -34,8 +34,8 @@ GanttChartMachine::GanttChartMachine(const QString &id, QGraphicsItem *parent) :
     QPen pen(Qt::black, 2, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
     line->setPen(pen);
 
-    private_arrow = new Arrow(this);
-    private_arrow->setPen(pen);
+    privateArrow = new Arrow(this);
+    privateArrow->setPen(pen);
 }
 
 GanttChartMachine::~GanttChartMachine()
@@ -44,7 +44,7 @@ GanttChartMachine::~GanttChartMachine()
 
 QRectF GanttChartMachine::boundingRect() const
 {
-    const QPointF& p = private_arrow->boundingRect().bottomRight();
+    const QPointF& p = privateArrow->boundingRect().bottomRight();
     return QRectF(0, 0, p.x(), p.y());
 }
 
@@ -70,7 +70,7 @@ void GanttChartMachine::setMakespan(int cMax)
     makespan = cMax;
 
     QPointF p(0, GanttChartBase::machineHeight);
-    private_arrow->setStartPoint(p);
+    privateArrow->setStartPoint(p);
     p.rx() += GanttChartBase::machineHorizontalOffset + (makespan + 4) * GanttChartBase::widthUnit;
-    private_arrow->setEndPoint(p);
+    privateArrow->setEndPoint(p);
 }

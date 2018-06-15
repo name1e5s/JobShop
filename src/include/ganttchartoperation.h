@@ -21,7 +21,7 @@ public:
 protected:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
-    QString m_id;
-    QColor m_color;
+    QString privateId;
+    QColor privateColor;
 };
 #endif // GANTTCHARTOPERATION_H

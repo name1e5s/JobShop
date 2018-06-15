@@ -29,8 +29,8 @@ protected:
 
 private:
     int makespan;
-    QString machine_num;
-    Arrow* private_arrow;
+    QString machineNum;
+    Arrow* privateArrow;
 };
 
 #endif // MASZYNA_H

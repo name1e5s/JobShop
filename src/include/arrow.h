@@ -43,9 +43,9 @@ protected:
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = 0);
 
 private:
-    QPointF private_startPoint;
-    QPointF private_endPoint;
-    QPolygonF private_arrowHead;
+    QPointF privateStartpoint;
+    QPointF privateEndpoint;
+    QPolygonF privateArrowhead;
 };
 
 #endif
