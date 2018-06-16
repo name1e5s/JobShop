@@ -10,6 +10,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <bottle.h>
+#include <QVector>
+#include <algorithm>
+#include <jobshop.h>
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
 
 /**
   A temporary struct for converting the internal representation
@@ -23,6 +29,7 @@ typedef struct PAIR_ASSISTANT_TYPE {
 	int step;			/**< Serial number of the order of this node in the job. */
 } pair_ass_t;
 
+float used_time;
 extern int best_makespan;
 
 static inline void write_file(char *file_name, int ans, pair_ass_t* pairs, float times);
@@ -62,64 +69,74 @@ int starttime_sort_cmp(const void *a, const void *b) {
  */
 void prestissimo(void) {
 	clock_t t = clock();
-	pair_ass_t pairs[MAXJOB*MAXMACHINE];
-    char filename[] = "32output.txt";
 	run_bottle_neck();
-	for (int i = 0; i < job_size; i++) {
-		for (int j = 0; j < machine_size; j++) {
-			pairs[i * machine_size + j].start_time = job[i].start[j];
-			pairs[i * machine_size + j].job_num = i;
-			pairs[i * machine_size + j].mach_num = j;
-			pairs[i * machine_size + j].proc_time = job[i].process_time[j];
-			pairs[i * machine_size + j].step = job[i].step[j];
-		}
-	}
-	qsort(pairs, job_size * machine_size, sizeof(pairs[0]), machine_sort_cmp);
-	for (int j = 0; j < machine_size; j++) {
-		qsort(pairs + job_size * j, job_size, sizeof(pairs[0]), starttime_sort_cmp);
-	}
-	float used_time = (clock() - t) * 1.0f / CLOCKS_PER_SEC;
-#ifdef __TEST
-	if (!test_output(pairs))
-		printf("Result is invalid!\n");
-#endif
-	for (int i = 0; i < machine_size; i++) {
-		printf("M%d", i);
-		for (int j = 0; j < job_size; j++) {
-			pair_ass_t *t = pairs + i * job_size + j;
-			printf(" (%d,%d-%d,%d)", t->start_time, t->job_num, t->step, t->start_time + t->proc_time);
-		}
-		printf("\n");
-	}
-	printf("Time Used: %.3fs\nEnd Time: %d\n",used_time,best_makespan);
-    write_file(filename,best_makespan,pairs,used_time);
+    used_time = (clock() - t) * 1.0f / CLOCKS_PER_SEC;
 	return;
 }
 
+QString JobShop::colsoleOutput() {
+    QString ans = "";
+    QVector<pair_ass_t> pairs;
+    for (int i = 0; i < job_size; i++) {
+        for (int j = 0; j < machine_size; j++) {
+            pair_ass_t ass;
+            ass.start_time = job[i].start[j];
+            ass.job_num = i;
+            ass.mach_num = j;
+            ass.proc_time = job[i].process_time[j];
+            ass.step = job[i].step[j];
+            pairs.append(ass);
+        }
+    }
 
+    for(auto t = fixer.begin(); t != fixer.end(); t++) {
+        pair_ass_t ass;
+        Fixer *f = *t;
+        ass.start_time = f->starttime;
+        ass.proc_time = f->duration;
+        ass.mach_num = f->machine;
+        ass.step = -1;
+        ass.job_num = -1;
+        pairs.append(ass);
+    }
+
+    std::sort(pairs.begin(),pairs.end(),
+              [](const pair_ass_t& a,const pair_ass_t& b) -> bool {
+        return a.mach_num < b.mach_num;
+    });
+    auto it = pairs.begin();
+    for (int j = 0; j < machine_size; j++) {
+        auto end = it;
+        for(; end != pairs.end() && end->mach_num == j;end++);
+        std::sort(it, end,
+                  [](const pair_ass_t& a,const pair_ass_t& b) -> bool {
+            return a.start_time < b.start_time;
+        });
+        ans += QString::asprintf("M%d",j);
+        qDebug() << end - it;
+        for(auto temp = it; temp != end; temp++) {
+            if(temp->job_num == -1) {
+                ans += QString::asprintf(" (%d,fix-me,%d)", temp->start_time, temp->start_time + temp->proc_time);
+            } else
+            ans += QString::asprintf(" (%d,%d-%d,%d)", temp->start_time, temp->job_num, temp->step, temp->start_time + temp->proc_time);
+        }
+        ans += "\n";
+        it = end;
+    }
+    return ans;
+}
 /**
   Print result to file...
 
   @param file_name Instance file path
   @param pairs Pair to be printed...
  */
-static inline void write_file(char *file_name, int ans,pair_ass_t* pairs,float times) {
-	FILE *out;
-	if ((out = fopen(file_name, "w")) == NULL) {
-		fprintf(stderr, "Unable to open %s\n", file_name);
-		exit(1);
-	}
-
-	for (int i = 0; i < machine_size; i++) {
-		fprintf(out,"M%d", i);
-		for (int j = 0; j < job_size; j++) {
-			pair_ass_t *t = pairs + i * job_size + j;
-			fprintf(out," (%d,%d-%d,%d)", t->start_time, t->job_num, t->step, t->start_time + t->proc_time);
-		}
-		fprintf(out,"\n");
-	}
-	fprintf(out,"Time Used: %.3fs\nEnd Time: %d\n", times, ans);
-
+void JobShop::writeFile(QString file_name) {
+    QFile output(file_name);
+    output.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream s(&output);
+    s << this->colsoleOutput();
+    s << QString::asprintf("Time Used: %.3fs\nEnd Time: %d\n",used_time, best_makespan);
 }
 
 #ifdef __TEST

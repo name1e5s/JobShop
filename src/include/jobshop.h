@@ -39,6 +39,8 @@ public:
     void getProb(QString);
     GanttChartBase* generateGantt();
     void runProb();
+    QString colsoleOutput();
+    void writeFile(QString file_name);
     QVector<Fixer*> fixer;
 private:
     job_t *privateJob;

@@ -76,6 +76,7 @@ Result::Result(JobShop *instance,QWidget *parent) :
  */
 Result::~Result()
 {
+    jssp->writeFile("fixed-output.txt");
     delete ui;
     delete privateChart;
 }
