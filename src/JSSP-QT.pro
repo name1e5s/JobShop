@@ -50,8 +50,8 @@ HEADERS += \
         include/ganttchartprogress.h        \
         include/ganttchartoperation.h       \
         include/input.h                     \
-        include/result.h \
-    include/encoding.h
+        include/result.h                    \
+        include/encoding.h
 
 FORMS += \
         forms/input.ui                      \
