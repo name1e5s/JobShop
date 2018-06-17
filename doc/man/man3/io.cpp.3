@@ -1,4 +1,4 @@
-.TH "D:/Projects/JSSP-QT/src/console/io.cpp" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.TH "D:/Projects/JSSP-QT/src/console/io.cpp" 3 "Sun Jun 17 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,6 +14,18 @@ D:/Projects/JSSP-QT/src/console/io.cpp \- IO\&.
 \fC#include <time\&.h>\fP
 .br
 \fC#include <bottle\&.h>\fP
+.br
+\fC#include <QVector>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <jobshop\&.h>\fP
+.br
+\fC#include <QFile>\fP
+.br
+\fC#include <QTextStream>\fP
+.br
+\fC#include <QDebug>\fP
 .br
 
 .SS "Classes"
@@ -49,6 +61,9 @@ D:/Projects/JSSP-QT/src/console/io.cpp \- IO\&.
 .SS "Variables"
 
 .in +1c
+.ti -1c
+.RI "float \fBused_time\fP"
+.br
 .ti -1c
 .RI "int \fBbest_makespan\fP"
 .br
@@ -91,7 +106,7 @@ If machine number of a is lesser than b, then return a positive value, else retu
 .PP
 
 .PP
-Definition at line 41 of file io\&.cpp\&.
+Definition at line 48 of file io\&.cpp\&.
 .SS "void prestissimo (void)"
 Convert internal solution representation structure to the format required by those nitpickers and print it\&.
 .PP
@@ -102,7 +117,7 @@ Convert internal solution representation structure to the format required by tho
 .PP
 
 .PP
-Definition at line 63 of file io\&.cpp\&.
+Definition at line 70 of file io\&.cpp\&.
 .SS "int starttime_sort_cmp (const void * a, const void * b)"
 Function to compare start time of two pairs for qsort\&.
 .PP
@@ -120,20 +135,9 @@ If start time of a is lesser than b, then return a positive value, else return a
 .PP
 
 .PP
-Definition at line 53 of file io\&.cpp\&.
+Definition at line 60 of file io\&.cpp\&.
 .SS "static void write_file (char * file_name, int ans, \fBpair_ass_t\fP * pairs, float times)\fC [inline]\fP, \fC [static]\fP"
-Print result to file\&.\&.\&.
-.PP
-\fBParameters:\fP
-.RS 4
-\fIfile_name\fP Instance file path 
-.br
-\fIpairs\fP Pair to be printed\&.\&.\&. 
-.RE
-.PP
 
-.PP
-Definition at line 106 of file io\&.cpp\&.
 .SH "Variable Documentation"
 .PP 
 .SS "int best_makespan"
@@ -142,6 +146,10 @@ Definition at line 106 of file io\&.cpp\&.
 Store the best makespan value\&. 
 .PP
 Definition at line 47 of file bottle\&.cpp\&.
+.SS "float used_time"
+
+.PP
+Definition at line 32 of file io\&.cpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for JSSP Solver from the source code\&.

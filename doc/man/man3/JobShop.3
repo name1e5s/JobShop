@@ -1,4 +1,4 @@
-.TH "JobShop" 3 "Fri Jun 15 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
+.TH "JobShop" 3 "Sun Jun 17 2018" "Version iota" "JSSP Solver" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -46,6 +46,12 @@ Inherits QObject\&.
 .RI "void \fBrunProb\fP ()"
 .br
 .RI "Run the awesome soler algorithm\&. "
+.ti -1c
+.RI "QString \fBcolsoleOutput\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteFile\fP (QString file_name)"
+.br
 .in -1c
 .SS "Public Attributes"
 
@@ -80,6 +86,10 @@ Get pointers of previous defined varibles\&.
 Definition at line 23 of file jobshop\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
+.SS "QString JobShop::colsoleOutput ()"
+
+.PP
+Definition at line 77 of file io\&.cpp\&.
 .SS "\fBGanttChartBase\fP * JobShop::generateGantt ()"
 
 .PP
@@ -150,24 +160,37 @@ Set machine size using the given value\&.
 
 .PP
 Definition at line 43 of file jobshop\&.cpp\&.
+.SS "void JobShop::writeFile (QString file_name)"
+Print result to file\&.\&.\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile_name\fP Instance file path 
+.br
+\fIpairs\fP Pair to be printed\&.\&.\&. 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file io\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "QVector<\fBFixer\fP*> JobShop::fixer"
 
 .PP
-Definition at line 42 of file jobshop\&.h\&.
+Definition at line 44 of file jobshop\&.h\&.
 .SS "\fBjob_t\fP* JobShop::privateJob\fC [private]\fP"
 
 .PP
-Definition at line 44 of file jobshop\&.h\&.
+Definition at line 46 of file jobshop\&.h\&.
 .SS "int* JobShop::privateJobSize\fC [private]\fP"
 
 .PP
-Definition at line 45 of file jobshop\&.h\&.
+Definition at line 47 of file jobshop\&.h\&.
 .SS "int* JobShop::privateMachineSize\fC [private]\fP"
 
 .PP
-Definition at line 46 of file jobshop\&.h\&.
+Definition at line 48 of file jobshop\&.h\&.
 
 .SH "Author"
 .PP 
