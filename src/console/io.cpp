@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file io.cpp
  * Functions to handle input and output.
  *
@@ -116,7 +116,7 @@ QString JobShop::colsoleOutput() {
         qDebug() << end - it;
         for(auto temp = it; temp != end; temp++) {
             if(temp->job_num == -1) {
-                ans += QString::asprintf(" (%d,fix-me,%d)", temp->start_time, temp->start_time + temp->proc_time);
+                ans += QString::asprintf(" (%d,检修,%d)", temp->start_time, temp->start_time + temp->proc_time);
             } else
             ans += QString::asprintf(" (%d,%d-%d,%d)", temp->start_time, temp->job_num, temp->step, temp->start_time + temp->proc_time);
         }

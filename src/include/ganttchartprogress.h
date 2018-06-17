@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file ganttchartprogress.h
  * .
  *
@@ -9,6 +9,8 @@
 #include <QThread>
 
 #include <bottle.h>
+#include <encoding.h>
+
 extern int best_makespan;
 
 class GanttChartProgress : public QThread {

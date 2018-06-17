@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file jobshop.h
  * This file is a simple wrapper for the previous CLI version
  * of this project to make it compatible with QT.
@@ -18,6 +18,7 @@
 #include <ganttchartbase.h>
 
 #include <bottle.h>
+#include <encoding.h>
 
 struct Fixer {
     int machine;

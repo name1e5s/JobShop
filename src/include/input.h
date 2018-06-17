@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file input.h
  * This file defines the input window.
  *
@@ -11,6 +11,7 @@
 #include <QMainWindow>
 
 #include <jobshop.h>
+#include <encoding.h>
 
 namespace Ui {
 class Input;

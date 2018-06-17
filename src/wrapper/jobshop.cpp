@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file jobshop.cpp
  * Simple wrapper of previous version of JSSP solver.
  *
@@ -105,7 +105,7 @@ GanttChartBase* JobShop::generateGantt() {
         }
     }
     for(Fixer *f : fixer) {
-        GanttChartOperation *gop =new GanttChartOperation("Fix Me",
+        GanttChartOperation *gop =new GanttChartOperation(QString::fromUtf8("检修"),
                                   f->duration,QColor("white"));
         gop->setParentItem(machines[f->machine]);
         QPointF pos = GanttChartBase::operationPosition(f->starttime);

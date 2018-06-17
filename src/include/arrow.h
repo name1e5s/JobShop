@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file arrow.h
  * This file defines how to draw an arrow on thegantt chart.
  *
@@ -9,6 +9,7 @@
 #define ARROW_H
 
 #include <QGraphicsLineItem>
+#include <encoding.h>
 
 QT_BEGIN_NAMESPACE
 class QGraphicsPolygonItem;

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file result.h
  * This file defines a simple dialog to show our Gantt chart and it
  * allows user to fix a machins at a given time. The format of the fix
@@ -18,6 +18,7 @@
 #include <ganttchartoperation.h>
 
 #include <jobshop.h>
+#include <encoding.h>
 
 namespace Ui {
 class Result;

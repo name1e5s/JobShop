@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file bottle.h
  * A Simple Old-fashion Implementation Of The
  * Well-known Shifting Bottleneck Procedure For
@@ -12,7 +12,7 @@
 
 #ifndef BOTTLE_H_INCLUDED
 #define BOTTLE_H_INCLUDED
-
+#include <encoding.h>
  /** @def MAXJOB
   The most jobs this program can handle.
  */

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file ganttchartmachine.h
  * This file defines how to present the gantt chart per machine.
  *
@@ -9,6 +9,7 @@
 #define MACHINE_H
 
 #include <QGraphicsItem>
+#include <encoding.h>
 
 class Arrow;
 

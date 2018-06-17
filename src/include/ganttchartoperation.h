@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file ganttchartoperation.h
  * This file defines how to present a operation on the m=gantt chart.
  *
@@ -10,6 +10,7 @@
 
 #include <QGraphicsRectItem>
 #include <QString>
+#include <encoding.h>
 
 class GanttChartOperation : public QGraphicsRectItem
 {

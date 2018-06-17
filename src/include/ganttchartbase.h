@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file ganttchartbase.h
  * This file contains the base class of the gantt chart.
  *
@@ -10,6 +10,7 @@
 
 #include <QGraphicsItem>
 
+#include <encoding.h>
 class GanttChartBase:public QGraphicsItem
 {
     Q_INTERFACES(QGraphicsItem)
