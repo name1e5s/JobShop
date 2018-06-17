@@ -6,7 +6,7 @@ message("|  _   | |\___ \\___ \|  ___/   \___ \ / _ \| \ \ / / _ \ '__| |")
 message("| | |__| |____) |___) | |       ____) | (_) | |\ V /  __/ |    |")
 message("|  \____/|_____/_____/|_|      |_____/ \___/|_| \_/ \___|_|    |")
 message("|                                                              |")
-message("|     Yet Another JSSP Solver by Name1e5s -- QT Ver.iota       |")
+message("|     Yet Another JSSP Solver by Name1e5s -- Ver.ゼロツー       |")
 message("================================================================")
 
 QT       += core gui
