@@ -16,7 +16,7 @@ extern int best_makespan;
 class GanttChartProgress : public QThread {
     Q_OBJECT
 public:
-    explicit GanttChartProgress(double in_speed = 1.0,QObject *parent = 0) : speed(in_speed),QThread(parent){}
+    explicit GanttChartProgress(double in_speed = 1.0,QObject *parent = 0) : QThread(parent),speed(in_speed) {}
     void setSpeed(double value);
 
 protected:

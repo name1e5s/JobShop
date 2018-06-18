@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file ganttchartmachine.cpp
  * Draw machine for our gantt chart.
  *
@@ -22,8 +22,8 @@
  */
 GanttChartMachine::GanttChartMachine(const QString &id, QGraphicsItem *parent) :
     QGraphicsItem(parent),
-    machineNum(id),
-    makespan(0)
+    makespan(0),
+    machineNum(id)
 {
     QGraphicsTextItem* text = new QGraphicsTextItem(machineNum, this);
     text->setPos(0, GanttChartBase::machineHeight/2);

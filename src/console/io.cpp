@@ -32,35 +32,6 @@ typedef struct PAIR_ASSISTANT_TYPE {
 float used_time;
 extern int best_makespan;
 
-static inline void write_file(char *file_name, int ans, pair_ass_t* pairs, float times);
-#ifdef __TEST
-static inline _Bool test_output( pair_ass_t *pair);
-#endif
-
-/**
-  Function to compare machine number of two pairs for qsort.
-
-  @param a The first pair.
-  @param b The second pair.
-  @return If machine number of a is lesser than b, then return a positive
-  value, else return a non-positive value.
- */
-int machine_sort_cmp(const void *a, const void *b) {
-	return ((pair_ass_t *)a)->mach_num - ((pair_ass_t *)b)->mach_num;
-}
-
-/**
-  Function to compare start time of two pairs for qsort.
-
-  @param a The first pair.
-  @param b The second pair.
-  @return If start time of a is lesser than b, then return a positive
-  value, else return a non-positive value.
-*/
-int starttime_sort_cmp(const void *a, const void *b) {
-	return ((pair_ass_t *)a)->start_time - ((pair_ass_t *)b)->start_time;
-}
-
 /**
   Convert internal solution representation structure to
   the format required by those nitpickers and print it.
@@ -138,26 +109,3 @@ void JobShop::writeFile(QString file_name) {
     s << this->colsoleOutput();
     s << QString::asprintf("Time Used: %.3fs\nEnd Time: %d\n",used_time, best_makespan);
 }
-
-#ifdef __TEST
-/********************************************/
-/*                TEST FIELD                */
-/********************************************/
-
-/**
-  Test if our output is valid...
-
-  @param job Instance
-  @param pairs Pair to be checked...
-*/
-static inline _Bool test_output(pair_ass_t *pair) {
-	_Bool flag = 1;
-	for (int i = 0; i < job_size * machine_size;i++) {
-		if(job[pair[i].job_num].order[pair[i].step] != pair[i].mach_num) {
-			printf("Result unmatch at job %d machine %d !\n", pair[i].job_num, pair[i].mach_num);
-			flag = 0;
-		}
-	}
-	return flag;
-}
-#endif
