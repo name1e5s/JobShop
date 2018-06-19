@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file arrow.cpp
  * Draw arrow.
  *
@@ -100,4 +100,3 @@ QPointF Arrow::startPoint() const{
 void Arrow::setStartPoint(const QPointF &startPoint) {
     privateStartpoint = startPoint;
 }
-

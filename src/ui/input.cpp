@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file input.cpp
  * Draw input window.
  *
@@ -43,6 +43,7 @@ void Input::on_start_button_clicked()
     this->close();
     jssp->getProb(ui->plainTextEdit->toPlainText());
     jssp->runProb();
+    jssp->writeFile("output-raw.txt");
     Result *r = new Result(jssp,this);
     r->show();
     r->exec();

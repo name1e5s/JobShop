@@ -1,34 +1,3 @@
-#  Edited by Name1e5s
-#  Just have some slight changes to make this script compatible with the newest
-#  version of QT.
-#-----------------------------------------------------------------------------
-# 
-#  Copyright (c) 2013, Thierry Lelegard
-#  All rights reserved.
-# 
-#  Redistribution and use in source and binary forms, with or without
-#  modification, are permitted provided that the following conditions are met:
-# 
-#  1. Redistributions of source code must retain the above copyright notice,
-#     this list of conditions and the following disclaimer. 
-#  2. Redistributions in binary form must reproduce the above copyright
-#     notice, this list of conditions and the following disclaimer in the
-#     documentation and/or other materials provided with the distribution. 
-# 
-#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-#  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-#  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-#  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-#  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-#  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-#  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-#  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
-#  THE POSSIBILITY OF SUCH DAMAGE.
-# 
-#-----------------------------------------------------------------------------
-
 <#
  .SYNOPSIS
 
@@ -37,13 +6,7 @@
  .DESCRIPTION
 
   This scripts downloads Qt source code, compiles and installs a static version
-  of Qt. It assumes that a prebuilt Qt / MinGW environment is already installed,
-  typically in C:\Qt. This prebuilt environment uses shared libraries. It is
-  supposed to remain the main development environment for Qt. This script adds
-  a static version of the Qt libraries in order to allow the construction of
-  standalone and self-sufficient executable.
-
-  This script is typically run from the Windows Explorer.
+  of Qt. 
 
   Requirements:
   - Windows PowerShell 3.0 or higher.
@@ -116,7 +79,6 @@ function Main
 
     # Get MinGW root directory, if not specified on the command line.
     if (-not $MingwDir) {
-        # Search all instances of gcc.exe from C:\Qt prebuilt environment.
         $GccList = @(Get-ChildItem -Path D:\Qt\*\Tools\mingw*\bin\gcc.exe | ForEach-Object FullName | Sort-Object)
         if ($GccList.Length -eq 0) {
             Exit-Script "MinGW environment not found, no Qt prebuilt version?"

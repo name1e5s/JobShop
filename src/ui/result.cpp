@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file result.cpp
  *
  * Draw result dialog.
@@ -88,6 +88,9 @@ Result::~Result()
  * @param duration
  */
 void Result::Fix(int machine, int clock ,int duration) {
+    if(machine >= machine_size) {
+        return;
+    }
     pair pairs[30];
     int index = 0;
     int real_duration;
