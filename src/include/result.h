@@ -43,6 +43,7 @@ private:
     GanttChartBase *privateChart;
     QGraphicsLineItem* privateLine;
     QGraphicsScene *privateScene;
+    int currentTime;
 };
 
 #endif // RESULT_H

@@ -48,7 +48,8 @@ int starttime_cmp(const void *a, const void *b) {
 Result::Result(JobShop *instance,QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Result),
-    jssp(instance)
+    jssp(instance),
+    currentTime(0)
 {
     ui->setupUi(this);
     privateChart = instance->generateGantt();
@@ -158,13 +159,13 @@ void Result::Fix(int machine, int clock ,int duration) {
  */
 void Result::on_fixButton_clicked()
 {
-    int clock = 0;
+    char c;
     int machine = 0;
     int duration = 0;
     QString str = ui->fixCommandLineEdit->text();
     QTextStream stream(&str);
-    stream >> clock >> machine >> duration;
-    this->Fix(machine,clock,duration);
+    stream >> c >> machine >> duration;
+    this->Fix(machine,currentTime,duration);
     privateScene->removeItem(privateChart);
     privateChart = jssp->generateGantt();
     privateScene->addItem(privateChart);
@@ -172,6 +173,7 @@ void Result::on_fixButton_clicked()
 }
 
 void Result::on_line_updated(int time) {
+    currentTime = time;
     QLineF line = privateLine->line();
     line.setPoints(QPointF( GanttChartBase::machineHorizontalOffset + time * GanttChartBase::widthUnit, \
                            GanttChartBase::operationHeight),QPointF( \
